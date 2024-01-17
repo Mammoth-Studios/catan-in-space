@@ -1,11 +1,11 @@
 # JIRA Ticket:
 
-Please include a link to the JIRA ticket that this pull request is related to. If there is no JIRA ticket, please create one and link it here.
+Please include a link to the JIRA ticket that this pull request is related to:
 https://mammoth-studios.atlassian.net/browse/CIS-XXXX
 
 ## Description
 
-Please include a summary of the change or the feature you are proposing. Include relevant motivation and context. List any dependencies that are required for this change.
+Please include a summary of the change or the feature you are proposing.
 
 ## Type of Change
 
