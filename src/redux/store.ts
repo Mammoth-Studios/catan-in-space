@@ -1,6 +1,6 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { featureComponentOneSlice } from "../src/domains/example-feature/components/feature-component-one/feature-component-one.slice";
-import { userQuerySlice } from "../src/domains/example-feature/components/feature-component-one/feature-component-one.queries";
+import { featureComponentOneSlice } from "../domains/example-feature/components/feature-component-one/feature-component-one.slice";
+import { userQuerySlice } from "../domains/example-feature/components/feature-component-one/feature-component-one.queries";
 // ...
 const rootReducer = combineReducers({
   // ...local reducers and useQuery reducershere,
