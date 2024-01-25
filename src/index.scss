@@ -12,6 +12,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+#root {
+  height: 100vh;
+}
 
 a {
   font-weight: 500;
@@ -55,6 +58,10 @@ button {
   :focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
   }
+}
+
+.flexbox-turn-on {
+  display: flex;
 }
 
 @media (prefers-color-scheme: light) {
