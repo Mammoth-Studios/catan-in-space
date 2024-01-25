@@ -73,6 +73,7 @@ button {
   display: grid;
   grid-template-columns: [first] 60vw [line2] 40vw;
   justify-items: center;
+  margin-top: 5%;
 }
 
 .item {
@@ -92,7 +93,6 @@ button {
   gap: 1em;
   border-radius: 8px;
   background-color: #1a1a1a;
-  color: #ffffff;
   position: relative;
   width: 40vw;
   height: calc(40vw);
