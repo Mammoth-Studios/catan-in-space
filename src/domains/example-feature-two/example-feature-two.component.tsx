@@ -1,7 +1,7 @@
 import { FeatureComponentOne } from "./components/feature-component-one/feature-component-one.component";
 import mammoth from "./assets/mamoth-house.png";
 // This will be used to compose all the components from this feature
-export const ExampleFeature = () => (
+export const ExampleFeatureTwo = () => (
   <>
     <div className='flexbox-turn-on placeholder-container'>
       <div className='flip-container item'>
