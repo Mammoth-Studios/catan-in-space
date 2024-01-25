@@ -5,7 +5,9 @@ import mammoth from "./assets/mamoth-house.png";
 export const Game = () => (
   <>
     <div className='flexbox-turn-on placeholder-container'>
-      <div className='flip-container item'>
+      <div className='flip-container'>
+        <h2>Game Page</h2>
+
         <div className='flipper'>
           <div className='front flexbox-turn-on'>
             <div className='flexbox-turn-on placeholder-content'>

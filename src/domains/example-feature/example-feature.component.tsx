@@ -4,7 +4,9 @@ import mammoth from "./assets/mamoth-house.png";
 export const ExampleFeature = () => (
   <>
     <div className='flexbox-turn-on placeholder-container'>
-      <div className='flip-container item'>
+      <div className='flip-container'>
+        <h2>Example Feature Page</h2>
+
         <div className='flipper'>
           <div className='front flexbox-turn-on'>
             <div className='flexbox-turn-on placeholder-content'>
