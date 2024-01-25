@@ -9,7 +9,7 @@ import App from "./App.tsx";
 import "./index.scss";
 
 // Pages
-import ExamplePage from "./pages/ExamplePage/index.tsx";
+import { ExampleFeature } from "./domains/example-feature/example-feature.index";
 import LandingPage from "./pages/LandingPage/index.tsx";
 
 // routing logic
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/example",
-        element: <ExamplePage />,
+        element: <ExampleFeature />,
       },
     ],
   },
