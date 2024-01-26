@@ -1,6 +1,7 @@
 import { FeatureComponentOne } from "./components/feature-component-one/feature-component-one.component";
 import mammoth from "./assets/mamoth-house.png";
 // This will be used to compose all the components from this feature
+import "./assets/style.scss";
 export const ExampleFeatureTwo = () => (
   <>
     <div className='flexbox-turn-on placeholder-container'>
@@ -24,7 +25,7 @@ export const ExampleFeatureTwo = () => (
           </div>
         </div>
       </div>
-      <div className='item'>
+      <div className='item' id='margin-fix'>
         <FeatureComponentOne propCount={1} />
       </div>
     </div>

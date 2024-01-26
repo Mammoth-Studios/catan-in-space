@@ -1,8 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./navbar.style.scss";
 
 const Navbar = () => {
+  const [menuVisible, setMenuVisible] = useState(false);
+  const location = useLocation();
+
+  const toggleMenu = () => {
+    setMenuVisible(!menuVisible);
+  };
+
   // Function to calculate the number of hexagons needed to fill the viewport width
   const calculateHexCount = () => {
     const viewportWidth = window.innerWidth;
@@ -33,6 +40,10 @@ const Navbar = () => {
     return hexagons;
   };
 
+  const isActiveLink = (path) => {
+    return location.pathname === path;
+  };
+
   return (
     <nav className='hexagon-container'>
       <div id='hex-animation'>
@@ -55,32 +66,134 @@ const Navbar = () => {
           {generateHexagonRow()}
         </div>
       </div>
-      <ul id='nav-ul'>
-        <li className='nav-button'>
-          <Link to='/'>Home</Link>
-        </li>
-        <li className='nav-button'>
-          <Link to='/feature'>Feature</Link>
-        </li>
-        <li className='nav-button'>
-          <Link to='/feature2'>Feature 2</Link>
-        </li>
-        <li className='nav-button'>
-          <Link to='/example'>Example</Link>
-        </li>
-        <li className='nav-button'>
-          <Link to='/game'>Game</Link>
-        </li>
-        {/* TODO- \/ conditional rendering after auth added \/ */}
-        {/* ------------------------------------------- */}
-        <li className='nav-button'>
-          <Link to='/login-signup'>Login/Signup</Link>
-        </li>
-        <li className='nav-button'>
-          <Link to='/profile'>Profile</Link>
-        </li>
-        {/* ------------------------------------------- */}
-      </ul>{" "}
+      {window.innerWidth > 768 && (
+        <ul id='nav-ul' className={menuVisible ? "active" : ""}>
+          <li
+            className={`nav-button ${isActiveLink("/") ? "active-link" : ""}`}
+          >
+            <Link to='/'>Home</Link>
+          </li>
+          <li
+            className={`nav-button ${
+              isActiveLink("/feature") ? "active-link" : ""
+            }`}
+          >
+            <Link to='/feature'>Feature</Link>
+          </li>
+          <li
+            className={`nav-button ${
+              isActiveLink("/feature2") ? "active-link" : ""
+            }`}
+          >
+            <Link to='/feature2'>Feature 2</Link>
+          </li>
+          <li
+            className={`nav-button ${
+              isActiveLink("/example") ? "active-link" : ""
+            }`}
+          >
+            <Link to='/example'>Example</Link>
+          </li>
+          <li
+            className={`nav-button ${
+              isActiveLink("/game") ? "active-link" : ""
+            }`}
+          >
+            <Link to='/game'>Game</Link>
+          </li>
+          {/* TODO- \/ conditional rendering after auth added \/ */}
+          {/* ------------------------------------------- */}
+          <li
+            className={`nav-button ${
+              isActiveLink("/login-signup") ? "active-link" : ""
+            }`}
+          >
+            <Link to='/login-signup'>Login/Signup</Link>
+          </li>
+          <li
+            className={`nav-button ${
+              isActiveLink("/profile") ? "active-link" : ""
+            }`}
+          >
+            <Link to='/profile'>Profile</Link>
+          </li>
+          {/* ------------------------------------------- */}
+        </ul>
+      )}
+      {window.innerWidth <= 768 && (
+        <>
+          <div
+            id='hamburger'
+            className={`menu-toggle nav-button ${menuVisible ? "active" : ""}`}
+            onClick={toggleMenu}
+          >
+            {/* Hamburger icon */}
+            <div className='bar'></div>
+            <div className='bar'></div>
+            <div className='bar'></div>
+          </div>{" "}
+          <div
+            id='modal-background'
+            className={menuVisible ? "active" : ""}
+            onClick={toggleMenu}
+          >
+            <ul id='nav-ul media-query' className={menuVisible ? "active" : ""}>
+              <li
+                className={`nav-button ${
+                  isActiveLink("/") ? "active-link" : ""
+                }`}
+              >
+                <Link to='/'>Home</Link>
+              </li>
+              <li
+                className={`nav-button ${
+                  isActiveLink("/feature") ? "active-link" : ""
+                }`}
+              >
+                <Link to='/feature'>Feature</Link>
+              </li>
+              <li
+                className={`nav-button ${
+                  isActiveLink("/feature2") ? "active-link" : ""
+                }`}
+              >
+                <Link to='/feature2'>Feature 2</Link>
+              </li>
+              <li
+                className={`nav-button ${
+                  isActiveLink("/example") ? "active-link" : ""
+                }`}
+              >
+                <Link to='/example'>Example</Link>
+              </li>
+              <li
+                className={`nav-button ${
+                  isActiveLink("/game") ? "active-link" : ""
+                }`}
+              >
+                <Link to='/game'>Game</Link>
+              </li>
+              {/* TODO- \/ conditional rendering after auth added \/ */}
+              {/* ------------------------------------------- */}
+              <li
+                className={`nav-button ${
+                  isActiveLink("/login-signup") ? "active-link" : ""
+                }`}
+              >
+                <Link to='/login-signup'>Login/Signup</Link>
+              </li>
+              <li
+                className={`nav-button ${
+                  isActiveLink("/profile") ? "active-link" : ""
+                }`}
+              >
+                <Link to='/profile'>Profile</Link>
+              </li>
+              {/* ------------------------------------------- */}
+            </ul>
+          </div>
+        </>
+      )}
     </nav>
   );
 };

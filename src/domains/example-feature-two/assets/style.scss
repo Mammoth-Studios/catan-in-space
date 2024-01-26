@@ -1,0 +1,11 @@
+@media screen and (max-width: 768px) {
+  .flip-container {
+    display: flex;
+    flex-direction: column;
+    position: unset;
+    perspective: 1000px;
+    width: 40vw;
+    height: 60%;
+    margin: auto;
+  }
+}
