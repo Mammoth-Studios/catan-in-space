@@ -17,6 +17,7 @@ import { Landing } from "./domains/landing/landing.index.tsx";
 import { LoginSignup } from "./domains/login-signup/login-signup.index.tsx";
 import { Profile } from "./domains/profile/profile.index.tsx";
 import { Error } from "./domains/error/error.index.tsx";
+
 // routing logic
 const router = createBrowserRouter([
   {
@@ -27,9 +28,6 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Landing />,
-      },
-      {
-        element: <Error />,
       },
       {
         path: "/feature",
