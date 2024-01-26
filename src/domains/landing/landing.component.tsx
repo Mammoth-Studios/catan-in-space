@@ -1,5 +1,6 @@
 import { FeatureComponentOne } from "./components/example-page-feature-component-one/feature-component-one.component";
 import mammoth from "./assets/mamoth-house.png";
+import { Link } from "react-router-dom";
 // This will be used to compose all the components from this feature
 export const Landing = () => (
   <>
@@ -23,6 +24,9 @@ export const Landing = () => (
             </div>
           </div>
         </div>
+        <Link to='/fake-page'>
+          <h2>Click to test error page</h2>
+        </Link>
       </div>
       <div className='item'>
         <FeatureComponentOne propCount={1} />

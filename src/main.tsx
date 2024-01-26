@@ -29,6 +29,9 @@ const router = createBrowserRouter([
         element: <Landing />,
       },
       {
+        element: <Error />,
+      },
+      {
         path: "/feature",
         element: <ExampleFeature />,
       },
