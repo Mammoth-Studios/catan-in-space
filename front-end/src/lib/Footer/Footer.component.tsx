@@ -1,16 +1,29 @@
 import React from "react";
 import "./Footer.style.scss";
 
-const Footer: React.FC = () => (
+type LinkData = {
+  href: string,
+  label: string,
+  text: string
+};
+
+// @ts-expect-error TS2304: Cannot find name 'Array'.
+const footerLinks: Array<LinkData> = [
+  { href: "/home", label: "Home Page", text: "Home" },
+  { href: "/contact", label: "Contact Page", text: "Contact" },
+  { href: "/how-to-play", label: "How To Play Page", text: "How To Play" },
+  { href: "/policy/privacy", label: "Privacy Policy Page", text: "Privacy Policy" },
+  { href: "/policy/TOS", label: "Terms Of Service Page", text: "Terms of Service" },
+  { href: "/careers", label: "Careers Page", text: "Careers" }
+];
+
+export const Footer: React.FC = () => (
   <footer>
     <img src="./PLACEHOLDER" alt="Catan In Space Logo" />
     <div className="links">
-      <a href="/home" aria-label="Home Page">Home</a>
-      <a href="/contact" aria-label="Contact Page">Contact</a>
-      <a href="/how-to-play" aria-label="How To Play Page">How To Play</a>
-      <a href="/policy/privacy" aria-label="Privacy Policy Page">Privacy Policy</a>
-      <a href="/policy/TOS" aria-label="Terms Of Service Page">Terms of Service</a>
-      <a href="/careers" aria-label="Careers Page">Careers</a>
+      {footerLinks.map((link: LinkData) => (
+        <a key={link.href} href={link.href} aria-label={link.label}>{link.text}</a>
+      ))}
     </div>
     <div className="socials">
 
@@ -39,5 +52,3 @@ const Footer: React.FC = () => (
     <p>© 2024 Mammoth Studios, All rights reserved.</p>
   </footer>
 );
-
-export default Footer;
