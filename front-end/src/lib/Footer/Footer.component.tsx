@@ -9,7 +9,6 @@ type LinkData = {
   text: string;
 };
 
-// @ts-expect-error TS2304: Cannot find name 'Array'.
 const footerLinks: Array<LinkData> = [
   { href: "/home", label: "Home Page", text: "Home" },
   { href: "/contact", label: "Contact Page", text: "Contact" },
