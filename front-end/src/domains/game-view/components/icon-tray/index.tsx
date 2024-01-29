@@ -1,1 +1,1 @@
-export { IconTray } from "./icon-tray.component.tsx";
+export * from "./icon-tray.component.tsx";

@@ -1,6 +1,24 @@
-import React from "react";
+import React, {ReactElement} from "react";
 import "./icon-tray.style.scss";
 
-export const IconTray: React.FC = () => (
-  <div className="icon-tray" />
+export type TrayData = {
+    icon: ReactElement;
+    label: string;
+    action: string;
+};
+
+type IconTrayProps = {
+    trayData: TrayData[];
+    actionsMap: (action: string) => void;
+};
+
+export const IconTray: React.FC<IconTrayProps> = ({trayData, actionsMap}) => (
+  <div className="icon-tray">
+      {trayData.map((data, index) => (
+          <div key={index} onClick={() => actionsMap(data.action)}>
+              {data.icon};
+              <p>{data.label}</p>
+          </div>
+      ))}
+  </div>
 );
