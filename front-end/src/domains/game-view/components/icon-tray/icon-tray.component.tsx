@@ -15,8 +15,8 @@ type IconTrayProps = {
 export const IconTray: React.FC<IconTrayProps> = ({trayData, actionsMap}) => (
   <div className="icon-tray">
       {trayData.map((data, index) => (
-          <div key={index} onClick={() => actionsMap(data.action)}>
-              {data.icon};
+          <div className={"icon"} key={index} onClick={() => actionsMap(data.action)}>
+              {data.icon}
               <p>{data.label}</p>
           </div>
       ))}

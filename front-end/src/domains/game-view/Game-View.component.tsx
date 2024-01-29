@@ -10,8 +10,8 @@ const TrayItems: Array<TrayData> = [
     { icon: <ChatIcon/>, label: "Chat", action: "chat" },
     { icon: <TradeIcon/>, label: "Trade", action: "trade"},
     { icon: <LogIcon/>, label: "Game Log", action: "log" },
-    { icon: <QuitIcon/>, label: "Quit Game", action: "quit" },
     { icon: <SettingsIcon/>, label: "Settings", action: "settings" },
+    { icon: <QuitIcon/>, label: "Quit Game", action: "quit" },
 ];
 
 const ActionMap = (action: string) => {
