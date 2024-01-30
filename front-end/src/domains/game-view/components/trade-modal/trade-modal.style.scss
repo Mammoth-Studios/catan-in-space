@@ -47,9 +47,9 @@
     border-radius: 50%;
     height: 100%;
     aspect-ratio: 1;
-    transition: all ease-in-out 0.5s;
+    transition: all ease-in 0.1s;
 
-    :hover {
+    &:hover {
       background-color: red;
       border-radius: 50%;
     }

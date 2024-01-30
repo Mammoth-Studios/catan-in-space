@@ -1,12 +1,17 @@
+import { TrayData } from "../icon-tray";
 import "./trade-modal.style.scss";
 
-export const TradeModal: React.FC = () => {
+type TradeModalProps = {
+    actionsMap: (action: TrayData|undefined) => void;
+    itemData?: TrayData;
+};
+export const TradeModal: React.FC<TradeModalProps>= ({actionsMap, itemData}) => {
 
     return (
         <div className="trade-modal">
             <div className={"header"}>
                 <h1> Trade Menu </h1>
-                <div className={"close"}>
+                <div className={"close"} onClick={() => actionsMap(itemData)}>
                     <svg xmlns="http://www.w3.org/2000/svg"
                          viewBox="0 0 384 512">
                         <path

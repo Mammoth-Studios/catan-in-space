@@ -25,7 +25,11 @@
     align-items: center;
     justify-content: center;
 
-    &:hover  {
+    &.active {
+      background-color: #6c6c6c !important;
+    }
+
+    &:hover {
       background-color: #939393;
       width: 100%;
       aspect-ratio: 1;
@@ -35,31 +39,52 @@
     }
 
     svg {
-      padding: 15px;
+      position: absolute;
+      opacity: 100;
+      inset: 15px;
+      aspect-ratio: 1;
+      transition: all ease-in-out .3s;
+    }
+    &:hover svg {
+      fill: #a8a8a8;
     }
 
     p {
-      opacity: 0;
       position: absolute;
-      background-color: #939393;
-      color: #dadada;
-      padding: 5px;
-      border-radius: 3px;
-      z-index: -1;
-      left: 90%;
-      width: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
+      opacity: 0;
+      inset: 15px;
+      transition: opacity ease-in .3s;
+
+      background-color: transparent;
+      color: #000000;
+      padding: 0;
       margin: 0;
-      white-space: nowrap;
-
-      transition: all ease-in-out .3s;
-
+      text-align: center;
+      font-weight: bold;
     }
 
-    &:hover p {
-      width: 100%;
-      opacity: 100;
+    &:not(.active):hover p {
+      opacity: 1;
+      transition: opacity ease-out .3s .5s;
     }
 
+  }
+
+  .tray-content {
+    position: absolute;
+    left: 110%;
+    top: 0;
+    bottom: 0;
+
+    width: 400px;
+    background-color: #dcdcdc;
+    color: black;
+    overflow: hidden;
+
+    padding: 15px;
   }
 }
