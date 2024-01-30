@@ -1,6 +1,6 @@
-import React from "react";
+import { FC } from "react";
 
-export const ChatMenu: React.FC = () => (
+export const ChatMenu: FC = () => (
   <>
     <h1>Chat Menu</h1>
 

@@ -1,6 +1,6 @@
-import React from "react";
+import { FC } from "react";
 
-export const QuitMenu: React.FC = () => (
+export const QuitMenu: FC = () => (
   <>
     <h1>Quit Menu</h1>
 

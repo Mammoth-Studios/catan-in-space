@@ -1,6 +1,6 @@
-import React from "react";
+import { FC } from "react";
 
-export const LogsMenu: React.FC = () => (
+export const LogsMenu: FC = () => (
   <>
     <h1>Logs Menu</h1>
 

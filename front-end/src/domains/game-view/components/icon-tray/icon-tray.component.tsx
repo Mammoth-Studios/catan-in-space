@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import { FC, ReactElement } from "react";
 import "./icon-tray.style.scss";
 
 export type TrayData = {
@@ -14,7 +14,7 @@ type IconTrayProps = {
     activeItem: TrayData | null;
 };
 
-export const IconTray: React.FC<IconTrayProps> = ({ trayData, actionsMap, activeItem }) => (
+export const IconTray: FC<IconTrayProps> = ({ trayData, actionsMap, activeItem }) => (
   <div className="icon-tray">
     {trayData.map((data) => (
       <button type="button" className={`icon ${data === activeItem ? "active" : ""}`} key={data.label} onClick={() => actionsMap?.(data)}>

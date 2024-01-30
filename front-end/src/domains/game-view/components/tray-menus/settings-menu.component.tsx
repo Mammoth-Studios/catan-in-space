@@ -1,6 +1,6 @@
-import React from "react";
+import { FC } from "react";
 
-export const SettingsMenu: React.FC = () => (
+export const SettingsMenu: FC = () => (
   <>
     <h1>Settings Menu</h1>
 

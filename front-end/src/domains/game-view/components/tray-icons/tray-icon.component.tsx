@@ -1,6 +1,6 @@
-import React from "react";
+import { FC } from "react";
 
-export const ChatIcon: React.FC = () => (
+export const ChatIcon: FC = () => (
     <svg xmlns="http://www.w3.org/2000/svg"
          viewBox="0 0 512 512">
         <path
@@ -8,7 +8,7 @@ export const ChatIcon: React.FC = () => (
     </svg>
 );
 
-export const LogIcon: React.FC = () => (
+export const LogIcon: FC = () => (
     <svg xmlns="http://www.w3.org/2000/svg"
          viewBox="0 0 512 512">
         <path
@@ -16,7 +16,7 @@ export const LogIcon: React.FC = () => (
     </svg>
 );
 
-export const SettingsIcon: React.FC = () => (
+export const SettingsIcon: FC = () => (
     <svg xmlns="http://www.w3.org/2000/svg"
          viewBox="0 0 512 512">
         <path
@@ -24,7 +24,7 @@ export const SettingsIcon: React.FC = () => (
     </svg>
 );
 
-export const QuitIcon: React.FC = () => (
+export const QuitIcon: FC = () => (
     <svg xmlns="http://www.w3.org/2000/svg"
          viewBox="0 0 576 512">
         <path
@@ -32,7 +32,7 @@ export const QuitIcon: React.FC = () => (
     </svg>
 );
 
-export const TradeIcon: React.FC = () => (
+export const TradeIcon: FC = () => (
     <svg xmlns="http://www.w3.org/2000/svg"
          viewBox="0 0 640 512">
         <path

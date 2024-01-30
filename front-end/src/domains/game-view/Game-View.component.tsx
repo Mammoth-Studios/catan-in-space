@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import{ FC, useState } from "react";
 
 import { GameBoard } from "./components/game-board";
 import { TradeModal } from "./components/trade-modal";
@@ -27,7 +27,7 @@ const TrayItems: Array<TrayData> = [
   },
 ];
 
-export const GameView: React.FC = () => {
+export const GameView: FC = () => {
   const [activeTrayItem, setActiveTrayItem] = useState<null | TrayData>(null);
 
   const ActionMap = (data:TrayData | undefined) => {
