@@ -1,4 +1,4 @@
-import React, {ReactElement} from "react";
+import React, { ReactElement } from "react";
 import "./icon-tray.style.scss";
 
 export type TrayData = {
@@ -10,24 +10,23 @@ export type TrayData = {
 
 type IconTrayProps = {
     trayData: TrayData[];
-    actionsMap: (action: TrayData) => void;
+    actionsMap: (data: TrayData | undefined) => void;
     activeItem: TrayData | null;
 };
 
-export const IconTray: React.FC<IconTrayProps> = ({trayData, actionsMap, activeItem}) => (
-  <>
-    <div className="icon-tray">
-      {trayData.map((data, index) => (
-          <div className={`icon ${data === activeItem? "active" : ""}`} key={index} onClick={() => actionsMap(data)}>
-              {data.icon}
-              <p>{data.label}</p>
-          </div>
-      ))}
-        {activeItem && activeItem.action === "menu" &&
-            <div className={"tray-content"}>
-                {activeItem.menu}
+export const IconTray: React.FC<IconTrayProps> = ({ trayData, actionsMap, activeItem }) => (
+  <div className="icon-tray">
+    {trayData.map((data) => (
+      <button type="button" className={`icon ${data === activeItem ? "active" : ""}`} key={data.label} onClick={() => actionsMap?.(data)}>
+        {data.icon}
+        <p>{data.label}</p>
+      </button>
+    ))}
+    {activeItem && activeItem.action === "menu"
+            && (
+            <div className="tray-content">
+              {activeItem.menu}
             </div>
-        }
+            )}
   </div>
-  </>
 );
