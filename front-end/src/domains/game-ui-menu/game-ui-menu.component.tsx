@@ -1,15 +1,13 @@
-import{ FC, useState } from "react";
-
-import { GameBoard } from "./components/game-board";
-import { TradeModal } from "./components/trade-modal";
-import { IconTray, TrayData } from "./components/icon-tray";
+import { FC, useState } from "react";
+import { TradeModal } from "@domains/game-ui-menu/components/trade-modal";
+import { IconTray, TrayData } from "@domains/game-ui-menu/components/icon-tray";
 
 import {
   ChatIcon, LogIcon, QuitIcon, SettingsIcon, TradeIcon
-} from "./components/tray-icons";
+} from "@domains/game-ui-menu/components/tray-icons";
 import {
   ChatMenu, LogsMenu, QuitMenu, SettingsMenu
-} from "./components/tray-menus";
+} from "@domains/game-ui-menu/components/tray-menus";
 
 const TrayItems: Array<TrayData> = [
   {
@@ -27,7 +25,7 @@ const TrayItems: Array<TrayData> = [
   },
 ];
 
-export const GameView: FC = () => {
+export const GameUIMenu: FC = () => {
   const [activeTrayItem, setActiveTrayItem] = useState<null | TrayData>(null);
 
   const ActionMap = (data:TrayData | undefined) => {
@@ -48,7 +46,6 @@ export const GameView: FC = () => {
   const TradeItem = TrayItems.find((item) => item.label === "Trade");
   return (
     <section className="game-view">
-      <GameBoard />
       {isTradeItemActive && <TradeModal actionsMap={ActionMap} itemData={TradeItem} />}
       <IconTray trayData={TrayItems} actionsMap={ActionMap} activeItem={activeTrayItem} />
     </section>

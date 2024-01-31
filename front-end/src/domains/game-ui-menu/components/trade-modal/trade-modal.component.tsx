@@ -1,16 +1,24 @@
-import { FC } from 'react';
-import {TrayData } from "../icon-tray";
+import { FC } from "react";
+import { TrayData } from "../icon-tray";
 import "./trade-modal.style.scss";
 
 type TradeModalProps = {
+  // eslint-disable-next-line no-unused-vars
     actionsMap: (action: TrayData|undefined) => void;
-    itemData?: TrayData;
+    itemData: TrayData;
 };
 export const TradeModal: FC<TradeModalProps> = ({ actionsMap, itemData }) => (
   <div className="trade-modal">
     <div className="header">
       <h1> Trade Menu </h1>
-      <div className="close" onClick={() => actionsMap(itemData)}>
+      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
+      <div
+        className="close"
+        onClick={() => actionsMap(itemData)}
+        role="button"
+        tabIndex={0}
+        aria-label="Close trade menu"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 384 512"

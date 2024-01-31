@@ -10,11 +10,14 @@ export type TrayData = {
 
 type IconTrayProps = {
     trayData: TrayData[];
+    // eslint-disable-next-line no-unused-vars
     actionsMap: (data: TrayData | undefined) => void;
     activeItem: TrayData | null;
 };
 
-export const IconTray: FC<IconTrayProps> = ({ trayData, actionsMap, activeItem }) => (
+export const IconTray: FC<IconTrayProps> = ({
+  trayData, actionsMap, activeItem,
+}) => (
   <div className="icon-tray">
     {trayData.map((data) => (
       <button type="button" className={`icon ${data === activeItem ? "active" : ""}`} key={data.label} onClick={() => actionsMap?.(data)}>
