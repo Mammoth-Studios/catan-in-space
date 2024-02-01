@@ -1,0 +1,67 @@
+.trade-modal {
+  background-color: #f9f9f9;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 99999;
+
+  width: 90%;
+  max-width: 600px;
+  height: 400px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+  border-radius: 25px;
+
+
+  .header {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    color: #101010;
+    align-items: center;
+    background-color: #bdbdbd;
+    padding: 10px 25px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .content {
+    background-color: #dcdcdc;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      color: #1a1a1a;
+      text-align: center;
+    }
+  }
+
+  .close {
+    background-color: #939393;
+    border-radius: 50%;
+    height: 100%;
+    aspect-ratio: 1;
+    transition: all ease-in 0.1s;
+
+    &:hover {
+      background-color: red;
+      border-radius: 50%;
+    }
+
+    svg {
+      fill: #ffffff;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .header h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+}

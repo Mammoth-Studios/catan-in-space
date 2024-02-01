@@ -15,8 +15,6 @@ dist-ssr
 
 # Editor directories and files
 .vscode/*
-.vite/*
-.vite
 !.vscode/extensions.json
 ../.idea
 .DS_Store
@@ -31,8 +29,5 @@ front-end/node_modules
 front-end/package-lock.json
 
 #server
-back-end/node_modules
-back-end/package-lock.json
-back-end/.env
-
-.idea
+server/node_modules
+server/package-lock.json

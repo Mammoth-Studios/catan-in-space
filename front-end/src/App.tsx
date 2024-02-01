@@ -1,6 +1,9 @@
 // Redux
 import { Provider } from "react-redux";
+// import { ExampleFeature } from "./domains/example-feature/example-feature.index";
 import { store } from "./redux/store";
+import { GameView } from "./views/game-view";
+// import { Footer } from "@lib/Footer";
 
 // Routing
 import { Outlet } from "react-router-dom";
@@ -16,6 +19,9 @@ function App() {
     <Provider store={store}>
       <Navbar />
       <Outlet />
+      {/* <ExampleFeature /> */}
+      {/* <Footer /> */}
+      <GameView />
     </Provider>
   );
 }
