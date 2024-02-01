@@ -1,8 +1,13 @@
+// Redux
 import { Provider } from "react-redux";
-// import { ExampleFeature } from "./domains/example-feature/example-feature.index";
-import { store } from "./redux/store";
-import { GameView } from "./views/game-view";
+import { store } from "@redux/store";
 // import { Footer } from "@lib/Footer";
+
+// Routing
+import { Outlet } from "react-router-dom";
+
+// Components
+import { Navbar } from "@lib/Navbar";
 
 // This will be used to compose all the components from this feature
 // All routing will also live here
@@ -10,9 +15,9 @@ import { GameView } from "./views/game-view";
 function App() {
   return (
     <Provider store={store}>
-      {/* <ExampleFeature /> */}
+      <Navbar />
+      <Outlet />
       {/* <Footer /> */}
-      <GameView />
     </Provider>
   );
 }
