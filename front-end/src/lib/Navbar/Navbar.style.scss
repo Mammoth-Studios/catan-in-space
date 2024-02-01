@@ -1,0 +1,242 @@
+nav {
+  background-color: #1a1a1a;
+  position: relative;
+  top: 0;
+  width: 100vw;
+  height: 11vh;
+  justify-content: space-around;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.107);
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.107); /* Add the box shadow */
+}
+
+#hex-animation {
+  width: 100vw;
+  position: absolute;
+}
+
+.hexagon-container {
+  display: flex;
+  flex-direction: column; /* Stack rows on top of each other */
+  align-items: center; /* Center hexagons horizontally */
+  overflow-x: scroll; /* Enable horizontal scrolling for overflow */
+  overflow-y: hidden; /* Hide vertical overflow */
+  justify-content: center;
+}
+
+.hexagon-row {
+  display: flex;
+  justify-content: center;
+}
+.hex-animation {
+  display: absolute;
+}
+
+#first-row {
+  position: relative;
+  top: 0%;
+  left: 0%;
+  animation: cascade 0.8s ease-in-out both;
+}
+#second-row {
+  position: relative;
+  top: 38%;
+  left: -0.6%;
+  animation: cascade 1.2s ease-in-out both;
+
+  animation-delay: calc(0.3s * var(--index));
+}
+#third-row {
+  position: relative;
+  bottom: -115%;
+  animation: cascade 1.4s ease-in-out both;
+
+  animation-delay: calc(0.6s * var(--index));
+}
+#fourth-row {
+  position: relative;
+  bottom: -115%;
+  left: -0.6%;
+  animation: cascade 1.6s ease-in-out both;
+
+  animation-delay: calc(0.9s * var(--index));
+}
+#fifth-row {
+  position: relative;
+  bottom: -115%;
+  animation: cascade 1.8s ease-in-out both;
+
+  animation-delay: calc(1.2s * var(--index));
+}
+#sixth-row {
+  position: relative;
+  bottom: -115%;
+  animation: cascade 2s ease-in-out both;
+
+  animation-delay: calc(1.5s * var(--index));
+}
+.hexagon {
+  width: 14px;
+  height: 14px;
+  margin: 0px; /* Adjust margin as needed */
+  position: relative;
+  svg {
+    width: 100%;
+    height: 100%;
+    color: white !important;
+  }
+  animation: cascade 1s ease-in-out both;
+  animation-delay: calc(0.1s * var(--index));
+}
+
+@keyframes cascade {
+  from {
+    transform: translateX(-500%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes cascade-2 {
+  from {
+    transform: translateX(-500%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+#nav-ul {
+  display: flex;
+  width: 100vw;
+  z-index: 100;
+  list-style-type: none;
+  justify-content: space-evenly;
+  padding-left: 0%;
+}
+#nav-ul a {
+  color: white !important;
+}
+
+.nav-button {
+  background-color: #242424;
+  border: 2px solid #1a1a1a;
+  padding: 1%;
+  box-shadow: 0 0 3px 3px rgba(255, 255, 255, 0.107); /* Add the box shadow */
+}
+
+.nav-button:hover {
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.107); /* Add the box shadow */
+}
+
+#nav-ul > li.nav-button.active-link {
+  background-color: #1a1a1a;
+}
+
+.menu-toggle {
+  display: flex;
+  cursor: pointer;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  flex-direction: column;
+  justify-content: space-around;
+  z-index: 100;
+  align-items: center;
+}
+
+.menu-toggle.active {
+  /* Style for the active (open) menu toggle */
+  display: flex;
+}
+
+.menu-toggle .bar {
+  /* Style for the hamburger bars */
+  border: 1px solid white;
+  background-color: white !important;
+  width: 80%;
+  height: 3px;
+  background-color: #333;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+#modal-background {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 1000;
+}
+
+#modal-background.active {
+  display: flex;
+}
+
+#nav-ul {
+  /* Style for the menu items */
+}
+#nav-ul\ media-query {
+  display: none !important;
+}
+
+#nav-ul\ media-query.active {
+  /* Style for the active (open) menu */
+  position: absolute;
+  top: 8vh;
+  display: flex !important;
+  flex-direction: column;
+  width: 100vw;
+  z-index: 1000;
+  list-style-type: none;
+  justify-content: space-evenly;
+  padding-left: 0%;
+}
+#hamburger {
+  align-self: flex-end;
+  width: 40px;
+  margin-right: 5%;
+}
+@media screen and (max-width: 768px) {
+  .menu-toggle.active + #modal-background {
+    display: block;
+  }
+
+  #nav-ul\ media-query.active {
+    position: absolute;
+    background-color: #1a1a1a;
+    width: 100%;
+    z-index: 1001; /* Ensure the modal is above the background */
+    list-style-type: none;
+    justify-content: space-evenly;
+    padding-left: 0;
+    top: 8vh; /* Adjust the top position to avoid overlapping the navbar */
+    height: 60vh;
+  }
+  #nav-ul\ media-query.active a {
+    height: 100% !important;
+    color: white;
+    display: flex !important;
+    align-items: center;
+    margin: auto;
+  }
+  #nav-ul\ media-query.active li {
+    display: flex;
+
+    text-align: center !important;
+    height: 100%;
+  }
+  #nav-ul\ media-query.active li:hover {
+    background-color: #1a1a1a;
+  }
+  #nav-ul\ media-query.active li.active-link {
+    background-color: #1a1a1a;
+  }
+}

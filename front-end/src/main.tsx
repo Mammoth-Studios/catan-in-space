@@ -9,49 +9,34 @@ import App from "./App.tsx";
 import "./index.scss";
 
 // Pages
-import { ExampleFeature } from "./domains/example-feature/example-feature.index.tsx";
-import { ExampleFeatureTwo } from "./domains/example-feature-two/example-feature-two.index.tsx";
-import { ExamplePage } from "./domains/example-page/example.index.tsx";
-import { Game } from "./domains/game/game.index.tsx";
-import { Landing } from "./domains/landing/landing.index.tsx";
-import { LoginSignup } from "./domains/login-signup/login-signup.index.tsx";
-import { Profile } from "./domains/profile/profile.index.tsx";
-import { Error } from "./domains/error/error.index.tsx";
+import { GameView } from "@views/game-view";
+import { LandingView } from "@views/landing-view";
+import { LoginSignupView } from "@views/login-signup-view";
+import { ProfileView } from "@views/profile-view";
+import { ErrorView } from "@views/error-view";
 
 // routing logic
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <Error />,
+    errorElement: <ErrorView />,
     children: [
       {
         index: true,
-        element: <Landing />,
-      },
-      {
-        path: "/feature",
-        element: <ExampleFeature />,
-      },
-      {
-        path: "/feature2",
-        element: <ExampleFeatureTwo />,
-      },
-      {
-        path: "/example",
-        element: <ExamplePage />,
+        element: <LandingView />,
       },
       {
         path: "/game",
-        element: <Game />,
+        element: <GameView />,
       },
       {
         path: "/login-signup",
-        element: <LoginSignup />,
+        element: <LoginSignupView />,
       },
       {
         path: "/profile",
-        element: <Profile />,
+        element: <ProfileView />,
       },
     ],
   },
