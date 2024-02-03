@@ -164,6 +164,229 @@ button {
 }
 // END Placeholder content styling
 
+// Login/Signup form styling
+// Brandon's boxes = white outside #dadada and gray inside #bcbcbc and black text border-radius = 15px
+.forms {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 30px;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  animation: hideLayer 0.3s ease-out forwards;
+  background-color: #dadada;
+
+  border-radius: 15px;
+}
+
+.form-wrapper.is-active {
+  animation: showLayer 0.3s ease-in forwards;
+  background-color: #bcbcbc;
+  z-index: 500;
+}
+
+#signup {
+  position: absolute;
+  top: 15%;
+  left: 30%;
+}
+
+#login {
+  position: absolute;
+}
+@keyframes showLayer {
+  50% {
+    z-index: 1;
+  }
+  100% {
+    z-index: 1;
+  }
+}
+
+@keyframes hideLayer {
+  0% {
+    z-index: 1;
+  }
+  49.999% {
+    z-index: 1;
+  }
+}
+
+.switcher {
+  position: relative;
+  cursor: pointer;
+  display: block;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease-out;
+}
+
+.form {
+  display: flex;
+  min-width: 260px;
+  margin-top: 50px;
+  padding: 30px 25px;
+  border-radius: 5px;
+  transform-origin: top;
+  flex-direction: column;
+}
+
+.form-login {
+  animation: hideLogin 0.3s ease-out forwards;
+}
+
+#login-btn-switch {
+  align-self: flex-end;
+}
+#signup-btn-switch {
+  align-self: flex-start;
+}
+
+.form-wrapper.is-active .form-login {
+  animation: showLogin 0.3s ease-in forwards;
+}
+
+@keyframes showLogin {
+  0% {
+    background: var(--three);
+    transform: translate(40%, 10px);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  100% {
+    background-color: var(--one);
+    transform: translate(0%, 0px);
+  }
+}
+
+@keyframes hideLogin {
+  0% {
+    background-color: var(--one);
+    transform: translate(0%, 0px);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  100% {
+    background: var(--three);
+    transform: translate(40%, 10px);
+  }
+}
+
+.form-signup {
+  animation: hideSignup 0.3s ease-out forwards;
+}
+
+.form-wrapper.is-active .form-signup {
+  animation: showSignup 0.3s ease-in forwards;
+}
+
+@keyframes showSignup {
+  0% {
+    background: var(--three);
+    transform: translate(-40%, 10px);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  100% {
+    background-color: var(--one);
+    transform: translate(0%, 0px);
+  }
+}
+
+@keyframes hideSignup {
+  0% {
+    background-color: var(--one);
+    transform: translate(0%, 0px);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  100% {
+    background: var(--three);
+    transform: translate(-40%, 10px);
+  }
+}
+
+// Brandon's boxes = white outside #dadada and gray inside #bcbcbc and black text
+
+.form fieldset {
+  position: relative;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  transition: all 0.3s ease-out;
+}
+
+.form-login fieldset {
+  transform: translateX(-50%);
+}
+
+.form-signup fieldset {
+  transform: translateX(50%);
+}
+
+.form-wrapper.is-active fieldset {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.4s ease-in, transform 0.35s ease-in;
+}
+
+.form legend {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+}
+
+.input-block {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  font-size: 1.17em;
+}
+
+.input-block label {
+  margin-bottom: 2%;
+  font-size: 1.17em;
+}
+.input-block input {
+  margin-bottom: 2%;
+  font-size: 1.17em;
+}
+
+.form [type="submit"] {
+  opacity: 0;
+  display: block;
+  min-width: 100px;
+  margin: 30px auto 10px;
+  font-size: 13px;
+  line-height: 40px;
+  border-radius: 25px;
+  border: none;
+  transition: all 0.3s ease-out;
+  color: var(--seventeen);
+}
+
+.form-wrapper.is-active .form [type="submit"] {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.4s ease-in;
+}
+.btn-signup:hover,
+.btn-login:hover {
+  background-color: var(--four);
+  color: var(--fifteen);
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
