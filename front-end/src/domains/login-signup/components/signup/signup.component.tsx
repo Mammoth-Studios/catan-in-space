@@ -1,16 +1,32 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { signupSlice } from "./signup.slice";
 import { RootState } from "../../../../redux/store";
+import eyeOpenIcon from "../../assets/images/eye-show-svgrepo-com.svg";
+import eyeClosedIcon from "../../assets/images/eye-off-svgrepo-com.svg";
+import clickIcon from "../../assets/images/click-svgrepo-com.svg";
 
-export const Signup: FC = () => {
+interface SignupProps {
+  activeForm: string;
+}
+export const Signup: FC<SignupProps> = ({ activeForm }) => {
   const dispatch = useDispatch();
   const signupForm = useSelector((state: RootState) => state.authSignup);
+
+  // State to track password visibility
+  const [showPassword, setShowPassword] = useState(false);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     // Dispatch the action to update the form input in the Redux store
     dispatch(signupSlice.actions.updateSignupForm({ field: name, value }));
   };
+
+  // Function to toggle password visibility
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <>
       <button
@@ -18,7 +34,7 @@ export const Signup: FC = () => {
         id='signup-btn-switch'
         className='switcher switcher-signup'
       >
-        Sign Up
+        Signup
       </button>
       <form className='form form-signup'>
         <fieldset>
@@ -35,21 +51,34 @@ export const Signup: FC = () => {
           </div>
           <div className='input-block'>
             <label htmlFor='password-signup'>Password</label>
-            <input
-              id='password-signup'
-              type='password'
-              name='password'
-              value={signupForm.password}
-              onChange={handleInputChange}
-              required
-            />
+            <div className='password-input-container'>
+              <input
+                id='password-signup'
+                type={showPassword ? "text" : "password"}
+                name='password'
+                value={signupForm.password}
+                onChange={handleInputChange}
+                required
+              />
+              <button
+                type='button'
+                className='toggle-password-button'
+                onClick={togglePasswordVisibility}
+              >
+                {showPassword ? (
+                  <img src={eyeOpenIcon} alt='Hide' />
+                ) : (
+                  <img src={eyeClosedIcon} alt='Show' />
+                )}
+              </button>
+            </div>
           </div>
         </fieldset>
-        <button type='submit' className='btn-signup'>
-          Sign Up
-          <i className='fa-solid fa-user-plus fa-sm'></i>
+        <button type='submit' className='form-btn btn-signup'>
+          Signup
+          <i className='fa-solid fa-arrow-right-to-bracket fa-sm'></i>
         </button>
-      </form>
+      </form>{" "}
     </>
   );
 };

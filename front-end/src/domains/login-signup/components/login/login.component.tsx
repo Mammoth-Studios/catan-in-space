@@ -1,17 +1,33 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginSlice } from "./login.slice";
 import { RootState } from "../../../../redux/store";
+import eyeOpenIcon from "../../assets/images/eye-show-svgrepo-com.svg";
+import eyeClosedIcon from "../../assets/images/eye-off-svgrepo-com.svg";
+import clickIcon from "../../assets/images/click-svgrepo-com.svg";
 
-export const Login: FC = () => {
+interface LoginProps {
+  activeForm: string;
+}
+
+export const Login: FC<LoginProps> = ({ activeForm }) => {
   const dispatch = useDispatch();
-
   const loginForm = useSelector((state: RootState) => state.authLogin);
+
+  // State to track password visibility
+  const [showPassword, setShowPassword] = useState(false);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     // Dispatch the action to update the form input in the Redux store
     dispatch(loginSlice.actions.updateLoginForm({ field: name, value }));
   };
+
+  // Function to toggle password visibility
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <>
       <button
@@ -36,14 +52,27 @@ export const Login: FC = () => {
           </div>
           <div className='input-block'>
             <label htmlFor='password-login'>Password</label>
-            <input
-              id='password-login'
-              type='password'
-              name='password'
-              value={loginForm.password}
-              onChange={handleInputChange}
-              required
-            />
+            <div className='password-input-container'>
+              <input
+                id='password-login'
+                type={showPassword ? "text" : "password"}
+                name='password'
+                value={loginForm.password}
+                onChange={handleInputChange}
+                required
+              />
+              <button
+                type='button'
+                className='toggle-password-button'
+                onClick={togglePasswordVisibility}
+              >
+                {showPassword ? (
+                  <img src={eyeOpenIcon} alt='Hide' />
+                ) : (
+                  <img src={eyeClosedIcon} alt='Show' />
+                )}
+              </button>
+            </div>
           </div>
         </fieldset>
         <button type='submit' className='form-btn btn-login'>

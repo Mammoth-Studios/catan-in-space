@@ -178,7 +178,6 @@ button {
   justify-content: flex-start;
   animation: hideLayer 0.3s ease-out forwards;
   background-color: #dadada;
-
   border-radius: 15px;
 }
 
@@ -227,7 +226,7 @@ button {
 
 .form {
   display: flex;
-  min-width: 260px;
+  min-width: 60vw;
   margin-top: 50px;
   padding: 30px 25px;
   border-radius: 5px;
@@ -240,14 +239,19 @@ button {
 }
 
 #login-btn-switch {
-  align-self: flex-end;
+  align-self: flex-start;
+  font-size: 2rem;
+  color: black;
 }
 #signup-btn-switch {
-  align-self: flex-start;
+  align-self: flex-end;
+  font-size: 2rem;
+  color: black;
 }
 
 .form-wrapper.is-active .form-login {
   animation: showLogin 0.3s ease-in forwards;
+  z-index: 100;
 }
 
 @keyframes showLogin {
@@ -284,6 +288,7 @@ button {
 
 .form-wrapper.is-active .form-signup {
   animation: showSignup 0.3s ease-in forwards;
+  z-index: 100;
 }
 
 @keyframes showSignup {
@@ -360,7 +365,7 @@ button {
 }
 .input-block input {
   margin-bottom: 2%;
-  font-size: 1.17em;
+  font-size: 1.5em;
 }
 
 .form [type="submit"] {

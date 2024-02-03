@@ -1,43 +1,38 @@
-import { FC, useState, useEffect } from "react";
+import { FC, useEffect } from "react";
 import { Login } from "@domains/login-signup/components/login";
 import { Signup } from "@domains/login-signup/components/signup";
+import { useDispatch, useSelector } from "react-redux";
 
-// This will be used to compose all the components from this feature
-
-// The basic UI of the Login / Signup views needs to have:
-
-// this input should have a logo that can hide / show the password types into the input
-
-// This title should be programatically grabbed from the navigation prop of the route in the react-router library.
-
-// The Signup / Login should be two different views.
-
-// Created a nested Router that switches between signup / login
-
-// Store the login / signup inputs data in the Redux store.
+import { setActiveForm } from "./login-signup-view.slice";
+import { RootState } from "../../redux/store";
+import "./login-signup-view.style.scss";
 
 export const LoginSignupView: FC = () => {
-  const [activeForm, setActiveForm] = useState("login");
+  const dispatch = useDispatch();
+  const activeForm = useSelector(
+    (state: RootState) => state.activeForm.activeForm
+  );
 
   useEffect(() => {
-    const switchers = document.querySelectorAll(".switcher");
+    let switchers: NodeListOf<HTMLElement>;
 
-    const switchForm = (clickedItem) => {
-      // Make sure clickedItem exists and has a parent element
-      if (clickedItem && clickedItem.parentElement) {
+    const switchForm = (clickedItem: HTMLElement) => {
+      if (clickedItem.parentElement) {
+        const switchers = document.querySelectorAll(".switcher");
         switchers.forEach((item) =>
           item.parentElement.classList.remove("is-active")
         );
         clickedItem.parentElement.classList.add("is-active");
-        setActiveForm(clickedItem.id); // Assuming that clickedItem.id is either "login" or "signup"
+        dispatch(setActiveForm(clickedItem.id));
       }
-    };
 
-    switchers.forEach((item) => {
-      // Make sure item has an event listener attached only once
-      item.addEventListener("click", () => switchForm(item));
-    });
-  }, []);
+      return () => {
+        switchers.forEach((item) => {
+          item.removeEventListener("click", () => switchForm(item));
+        });
+      };
+    };
+  }, [dispatch]);
 
   return (
     <section id='login-signup-container'>
@@ -45,13 +40,13 @@ export const LoginSignupView: FC = () => {
         id='login'
         className={`form-wrapper ${activeForm === "login" ? "is-active" : ""}`}
       >
-        <Login />
+        <Login activeForm={activeForm} />
       </div>
       <div
         id='signup'
         className={`form-wrapper ${activeForm === "signup" ? "is-active" : ""}`}
       >
-        <Signup />
+        <Signup activeForm={activeForm} />
       </div>
     </section>
   );
