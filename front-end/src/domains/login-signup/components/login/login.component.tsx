@@ -1,47 +1,56 @@
-// This will be used to compose all the components from this feature
-// The basic UI of the Login / Signup views needs to have:
+import { FC } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { loginSlice } from "./login.slice";
+import { RootState } from "../../../../redux/store";
 
-// Two input fields
+export const Login: FC = () => {
+  const dispatch = useDispatch();
 
-// email / username
-
-// password
-
-// this input should have a logo that can hide / show the password types into the input
-
-// Title of the view i.e. “Login” or “Signup”
-
-// This title should be programatically grabbed from the navigation prop of the route in the react-router library.
-
-// The Signup / Login should be two different views.
-
-// Created a nested Router that switches between signup / login
-
-// Store the login / signup inputs data in the Redux store.
-export const Login = () => (
-  <>
-    <button
-      type='button'
-      id='login-btn-switch'
-      className='switcher switcher-login'
-    >
-      Login
-    </button>
-    <form className='form form-login'>
-      <fieldset>
-        <div className='input-block'>
-          <label htmlFor='email-login'>E-mail/Username</label>
-          <input id='email-login' type='email' required />
-        </div>
-        <div className='input-block'>
-          <label htmlFor='password-login'>Password</label>
-          <input id='password-login' type='password' required />
-        </div>
-      </fieldset>
-      <button type='submit' className='form-btn btn-login'>
+  const loginForm = useSelector((state: RootState) => state.authLogin);
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    // Dispatch the action to update the form input in the Redux store
+    dispatch(loginSlice.actions.updateLoginForm({ field: name, value }));
+  };
+  return (
+    <>
+      <button
+        type='button'
+        id='login-btn-switch'
+        className='switcher switcher-login'
+      >
         Login
-        <i className='fa-solid fa-arrow-right-to-bracket fa-sm'></i>
       </button>
-    </form>{" "}
-  </>
-);
+      <form className='form form-login'>
+        <fieldset>
+          <div className='input-block'>
+            <label htmlFor='email-login'>E-mail/Username</label>
+            <input
+              id='email-login'
+              type='email'
+              name='email'
+              value={loginForm.email}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
+          <div className='input-block'>
+            <label htmlFor='password-login'>Password</label>
+            <input
+              id='password-login'
+              type='password'
+              name='password'
+              value={loginForm.password}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
+        </fieldset>
+        <button type='submit' className='form-btn btn-login'>
+          Login
+          <i className='fa-solid fa-arrow-right-to-bracket fa-sm'></i>
+        </button>
+      </form>{" "}
+    </>
+  );
+};

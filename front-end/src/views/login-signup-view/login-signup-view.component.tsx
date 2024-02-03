@@ -6,15 +6,7 @@ import { Signup } from "@domains/login-signup/components/signup";
 
 // The basic UI of the Login / Signup views needs to have:
 
-// Two input fields
-
-// email / username
-
-// password
-
 // this input should have a logo that can hide / show the password types into the input
-
-// Title of the view i.e. “Login” or “Signup”
 
 // This title should be programatically grabbed from the navigation prop of the route in the react-router library.
 
