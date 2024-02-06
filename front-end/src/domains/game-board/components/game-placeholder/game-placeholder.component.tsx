@@ -1,4 +1,4 @@
-import mammoth from "@views/game-view/assets/mamoth-house.png";
+import mammoth from "@views/assets/mamoth-house.png";
 
 // This will be used to compose all the components from this feature
 export const GamePlaceHolder = () => (
