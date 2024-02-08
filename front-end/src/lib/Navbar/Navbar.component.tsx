@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./navbar.style.scss";
+import "./Navbar.style.scss";
 
 export const Navbar = () => {
   const [menuVisible, setMenuVisible] = useState(false);
