@@ -2,9 +2,9 @@ import { FC, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginSlice } from "./login.slice";
 import { RootState } from "../../../../redux/store";
-import eyeOpenIcon from "../../assets/images/eye-show-svgrepo-com.svg";
-import eyeClosedIcon from "../../assets/images/eye-off-svgrepo-com.svg";
-import clickIcon from "../../assets/images/click-svgrepo-com.svg";
+import eyeOpenIcon from "../../assets/images/eye-show.svg";
+import eyeClosedIcon from "../../assets/images/eye-off.svg";
+// import clickIcon from "../../assets/images/click-svgrepo-com.svg";
 
 interface LoginProps {
   activeForm: string;

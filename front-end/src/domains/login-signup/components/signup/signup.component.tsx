@@ -1,15 +1,15 @@
 import { FC, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { signupSlice } from "./signup.slice";
-import { RootState } from "../../../../redux/store";
-import eyeOpenIcon from "../../assets/images/eye-show-svgrepo-com.svg";
-import eyeClosedIcon from "../../assets/images/eye-off-svgrepo-com.svg";
-import clickIcon from "../../assets/images/click-svgrepo-com.svg";
+import { RootState } from "../../../../redux";
+import eyeOpenIcon from "../../assets/images/eye-show.svg";
+import eyeClosedIcon from "../../assets/images/eye-off.svg";
+// import clickIcon from "../../assets/images/click-svgrepo-com.svg";
 
 interface SignupProps {
   activeForm: string;
 }
-export const Signup: FC<SignupProps> = ({ activeForm }) => {
+export const Signup: FC<SignupProps> = () => {
   const dispatch = useDispatch();
   const signupForm = useSelector((state: RootState) => state.authSignup);
 
