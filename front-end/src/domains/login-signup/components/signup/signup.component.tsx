@@ -1,20 +1,11 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { signupSlice } from "./signup.slice";
-import { RootState } from "../../../../redux";
-import eyeOpenIcon from "../../assets/images/eye-show.svg";
-import eyeClosedIcon from "../../assets/images/eye-off.svg";
-// import clickIcon from "../../assets/images/click-svgrepo-com.svg";
+import { RootState } from "../../../../redux/store";
 
-interface SignupProps {
-  activeForm: string;
-}
-export const Signup: FC<SignupProps> = () => {
+export const Signup: FC = () => {
   const dispatch = useDispatch();
   const signupForm = useSelector((state: RootState) => state.authSignup);
-
-  // State to track password visibility
-  const [showPassword, setShowPassword] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -22,20 +13,8 @@ export const Signup: FC<SignupProps> = () => {
     dispatch(signupSlice.actions.updateSignupForm({ field: name, value }));
   };
 
-  // Function to toggle password visibility
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
-
   return (
     <>
-      <button
-        type='button'
-        id='signup-btn-switch'
-        className='switcher switcher-signup'
-      >
-        Signup
-      </button>
       <form className='form form-signup'>
         <fieldset>
           <div className='input-block'>
@@ -54,23 +33,12 @@ export const Signup: FC<SignupProps> = () => {
             <div className='password-input-container'>
               <input
                 id='password-signup'
-                type={showPassword ? "text" : "password"}
+                type='password'
                 name='password'
                 value={signupForm.password}
                 onChange={handleInputChange}
                 required
               />
-              <button
-                type='button'
-                className='toggle-password-button'
-                onClick={togglePasswordVisibility}
-              >
-                {showPassword ? (
-                  <img src={eyeOpenIcon} alt='Hide' />
-                ) : (
-                  <img src={eyeClosedIcon} alt='Show' />
-                )}
-              </button>
             </div>
           </div>
         </fieldset>
