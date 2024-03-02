@@ -10,7 +10,7 @@ import "./index.scss";
 
 // Pages
 import { GameView } from "@views/game-view";
-import { LandingView } from "@views/landing-view";
+import { HomeView } from "@views/home-view";
 import { LoginSignupView } from "@views/login-signup-view";
 import { ProfileView } from "@views/profile-view";
 import { ErrorView } from "@views/error-view";
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <LandingView />,
+        element: <HomeView />,
       },
       {
         path: "/game",

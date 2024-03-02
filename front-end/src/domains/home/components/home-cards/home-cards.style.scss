@@ -1,0 +1,11 @@
+@import "../../../../theme.scss";
+
+#home-cards {
+  align-self: center;
+  border: "3px solid $grayscale-white";
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  // padding: 0 20px;
+}
