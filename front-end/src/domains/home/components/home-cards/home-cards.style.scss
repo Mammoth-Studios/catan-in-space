@@ -1,11 +1,12 @@
-@import "../../../../theme.scss";
+@import "../../home.scss";
 
 #home-cards {
   align-self: center;
-  border: "3px solid $grayscale-white";
+  border: "3px solid $grayscale-black";
   display: flex;
+  height: 450px;
   justify-content: space-between;
   margin-top: 20px;
-  margin-bottom: 20px;
-  // padding: 0 20px;
+  margin-bottom: 60px;
+  width: 80%;
 }

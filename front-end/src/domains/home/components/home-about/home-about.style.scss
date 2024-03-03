@@ -1,0 +1,9 @@
+@import "../../home.scss";
+
+.home-about {
+  align-self: center;
+  display: flex;
+  color: $grayscale-black;
+  flex-direction: column;
+  width: 80%;
+}

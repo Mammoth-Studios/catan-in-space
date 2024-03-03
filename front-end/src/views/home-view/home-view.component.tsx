@@ -1,12 +1,13 @@
 import { FC } from "react";
-import mammoth from "../assets/mamoth-house.png";
-import { Link } from "react-router-dom";
+// import mammoth from "../assets/mamoth-house.png";
+// import { Link } from "react-router-dom";
 // This will be used to compose all the components from this feature
 import "./home-view.style.scss";
 import HomeCards from "@domains/home/components/home-cards/home-cards.component";
+import HomeAbout from "@domains/home/components/home-about/home-about.component";
 
 export const HomeView: FC = () => (
-  <div>
+  <div className="home-view">
     {/* <div>
       <h2>Landing Page</h2>
       <Link to="/fake-page">
@@ -14,5 +15,6 @@ export const HomeView: FC = () => (
       </Link>
     </div> */}
     <HomeCards />
+    <HomeAbout />
   </div>
 );

@@ -6,8 +6,11 @@
   border-radius: 10px;
   box-shadow: 0 0 10px 0 $grayscale-black;
   margin: 20px;
-  //   padding: 20px;
   position: relative;
+  // margin-bottom: 40px;
+  &-flip {
+    transform: rotate(90deg);
+  }
 }
 
 #placeholder-box-path {
@@ -19,7 +22,6 @@
   background-color: $grayscale-white;
   border-radius: 5px;
   color: $grayscale-black;
-  padding: 5px;
   position: absolute;
   margin-left: 20px;
   width: 60%;
@@ -32,6 +34,6 @@
   }
 
   &-bottom {
-    top: 70%;
+    top: 80%;
   }
 }
