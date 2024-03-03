@@ -4,13 +4,11 @@ html {
 }
 
 footer {
-  margin-top: 500px ;
+  margin-top: 100px;
   background: #f9f9f9;
   width: 100vw;
 
-
   .container {
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -63,4 +61,3 @@ footer {
     }
   }
 }
-
