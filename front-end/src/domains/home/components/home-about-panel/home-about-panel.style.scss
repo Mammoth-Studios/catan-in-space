@@ -13,22 +13,22 @@
   &-left {
     :after {
       content: "";
-      position: absolute;
-      left: 0;
       bottom: 0;
       border-bottom: 120px solid $grayscale-off-white;
       border-right: 120px solid $grayscale-white;
+      left: 0;
+      position: absolute;
     }
   }
 
   &-right {
     :before {
       content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
       border-top: 120px solid $grayscale-off-white;
       border-left: 120px solid $grayscale-white;
+      position: absolute;
+      right: 0;
+      top: 0;
     }
   }
 }
@@ -66,6 +66,14 @@
   margin: 0;
   text-align: center;
   width: 60%;
+
+  &-left {
+    text-align: right;
+  }
+
+  &-right {
+    text-align: left;
+  }
 }
 
 .about-panel-title {

@@ -17,7 +17,9 @@ const AboutPanel: FC<AboutPanelProps> = ({
     <div className={`about-panel-container about-panel-container-${position}`}>
       <h2 className="about-panel-title">{title}</h2>
       <div className={`about-panel-content about-panel-content-${position}`}>
-        <p className="about-panel-text">{content}</p>
+        <p className={`about-panel-text about-panel-text-${position}`}>
+          {content}
+        </p>
         <PlaceHolderBox height="100%" width="30%" />
       </div>
     </div>
