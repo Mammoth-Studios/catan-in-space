@@ -6,6 +6,7 @@ interface PlaceHolderBoxProps {
   width: number | string;
   title?: string;
   position?: string;
+  flip?: boolean;
 }
 
 export const PlaceHolderBox: FC<PlaceHolderBoxProps> = ({
@@ -13,15 +14,26 @@ export const PlaceHolderBox: FC<PlaceHolderBoxProps> = ({
   height,
   width,
   title = "",
+  flip = false,
 }) => {
   return (
-    <div className="placeholder-box">
-      <svg width={width} height={height} viewBox="0 0 392 502" fill="none">
+    <div
+      className={`placeholder-box placeholder-box${flip ? "-flip" : ""}`}
+      style={{ width, height }}
+    >
+      <svg
+        width={width}
+        height={height}
+        viewBox={`0 0 ${width} ${height}`}
+        fill="none"
+      >
         <path d="M391.5 2L0.5 500V2L391.5 500" id="placeholder-box-path" />
       </svg>
-      <p className={`placeholder-box-text placeholder-box-text-${position}`}>
-        {title}
-      </p>
+      {title && (
+        <p className={`placeholder-box-text placeholder-box-text-${position}`}>
+          {title}
+        </p>
+      )}
     </div>
   );
 };

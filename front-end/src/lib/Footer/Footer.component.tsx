@@ -2,6 +2,7 @@ import React from "react";
 import "./Footer.style.scss";
 // import { FacebookLogo, InstagramLogo, XLogo } from "@lib/Social-Logos";
 import LogoFooter from "./Placeholder_Logo_Footer.png";
+import { PlaceHolderBox } from "@lib/PlaceHolderBox";
 
 type LinkData = {
   href: string;
@@ -28,7 +29,7 @@ const footerLinks: Array<LinkData> = [
 export const Footer: React.FC = () => (
   <footer>
     <div className="container">
-      <img src={LogoFooter} alt="Catan In Space Logo" />
+      <PlaceHolderBox height="100%" width="30%" title="Logo" position="mid" />
       <div className="links">
         {footerLinks.map((link: LinkData) => (
           <a key={link.href} href={link.href} aria-label={link.label}>
