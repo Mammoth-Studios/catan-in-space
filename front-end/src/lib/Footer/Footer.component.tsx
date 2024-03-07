@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.style.scss";
 
-import { FacebookLogo, InstagramLogo, XLogo } from "@lib/Social-Logos";
+import { PlaceHolderBox } from "@lib/PlaceHolderBox";
 
 type LinkData = {
   href: string;
@@ -10,36 +10,32 @@ type LinkData = {
 };
 
 const footerLinks: Array<LinkData> = [
-  { href: "/home", label: "Home Page", text: "Home" },
-  { href: "/contact", label: "Contact Page", text: "Contact" },
-  { href: "/how-to-play", label: "How To Play Page", text: "How To Play" },
+  { href: "#", label: "Move to Top of Page", text: "Top of Page" },
+  { href: "/", label: "Home Page", text: "Home" },
+  { href: "/game", label: "Play Game Page", text: "Play Game" },
   {
-    href: "/policy/privacy",
-    label: "Privacy Policy Page",
-    text: "Privacy Policy",
+    href: "/profile",
+    label: "Open Profile",
+    text: "Profile",
   },
   {
-    href: "/policy/TOS",
-    label: "Terms Of Service Page",
-    text: "Terms of Service",
+    href: "/friends",
+    label: "Open Friends",
+    text: "Friends",
   },
-  { href: "/careers", label: "Careers Page", text: "Careers" },
 ];
 
 export const Footer: React.FC = () => (
   <footer>
-    <img src="./PLACEHOLDER" alt="Catan In Space Logo" />
-    <div className="links">
-      {footerLinks.map((link: LinkData) => (
-        <a key={link.href} href={link.href} aria-label={link.label}>
-          {link.text}
-        </a>
-      ))}
-    </div>
-    <div className="socials">
-      <FacebookLogo />
-      <InstagramLogo />
-      <XLogo />
+    <div className="container">
+      <PlaceHolderBox height="100%" width="30%" title="Logo" position="mid" />
+      <div className="links">
+        {footerLinks.map((link: LinkData) => (
+          <a key={link.href} href={link.href} aria-label={link.label}>
+            {link.text}
+          </a>
+        ))}
+      </div>
     </div>
     <p>© 2024 Mammoth Studios, All rights reserved.</p>
   </footer>

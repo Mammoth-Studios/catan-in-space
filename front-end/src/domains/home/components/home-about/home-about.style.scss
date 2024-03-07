@@ -1,0 +1,39 @@
+@import "../../home.scss";
+
+.home-about {
+  align-self: center;
+  display: flex;
+  color: $grayscale-black;
+  flex-direction: column;
+  width: 80%;
+}
+
+.home-about-credits {
+  align-self: center;
+  border: 3px solid $grayscale-black;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 $grayscale-black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.home-about-credits-container {
+  align-self: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.home-about-credits-department {
+  align-items: center;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-items: space-around;
+  width: 100%;
+}

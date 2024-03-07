@@ -1,0 +1,81 @@
+@import "../../home.scss";
+
+.about-panel-container {
+  align-self: center;
+  background-color: $grayscale-white;
+  color: $grayscale-black;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+  position: relative;
+  width: 100%;
+
+  &-left {
+    :after {
+      content: "";
+      bottom: 0;
+      border-bottom: 120px solid $grayscale-off-white;
+      border-right: 120px solid $grayscale-white;
+      left: 0;
+      position: absolute;
+    }
+  }
+
+  &-right {
+    :before {
+      content: "";
+      border-top: 120px solid $grayscale-off-white;
+      border-left: 120px solid $grayscale-white;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+}
+
+.about-panel-content {
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+  margin-bottom: 40px;
+
+  &-left {
+    flex: 1;
+    padding: 20px;
+    :after {
+      border-bottom: 0px;
+      border-right: 0px;
+    }
+  }
+
+  &-right {
+    flex: 1;
+    flex-direction: row-reverse;
+    padding: 20px;
+    :before {
+      border-top: 0px;
+      border-left: 0px;
+    }
+  }
+}
+
+.about-panel-text {
+  align-self: center;
+  color: $grayscale-black;
+  font-size: 20px;
+  margin: 0;
+  text-align: center;
+  width: 60%;
+
+  &-left {
+    text-align: right;
+  }
+
+  &-right {
+    text-align: left;
+  }
+}
+
+.about-panel-title {
+  margin-left: 40px;
+}
