@@ -1,7 +1,6 @@
 import React from "react";
 import "./Footer.style.scss";
-// import { FacebookLogo, InstagramLogo, XLogo } from "@lib/Social-Logos";
-import LogoFooter from "./Placeholder_Logo_Footer.png";
+
 import { PlaceHolderBox } from "@lib/PlaceHolderBox";
 
 type LinkData = {
