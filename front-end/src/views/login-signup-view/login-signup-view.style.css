@@ -1,0 +1,6 @@
+/* Any css styling for the login-signup view will go here */
+.toggle-password-button img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}

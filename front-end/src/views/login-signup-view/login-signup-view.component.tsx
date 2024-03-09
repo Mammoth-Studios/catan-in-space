@@ -1,28 +1,18 @@
-import { FC } from "react";
-import mammoth from "../assets/mamoth-house.png";
-// This will be used to compose all the components from this feature
-export const LoginSignupView: FC = () => (
-  <>
-    <div className="flexbox-turn-on placeholder-container">
-      <div className="flip-container">
-        <h2>Login/Signup flip containers</h2>
-        <div className="flipper">
-          <div className="front flexbox-turn-on">
-            <div className="flexbox-turn-on placeholder-content">
-              <img src={mammoth} className="placeholder-img"></img>
-              <h2>In Development!</h2>
-              <h2>Stay tuned!</h2>
-            </div>
-          </div>
-          <div className="back flexbox-turn-on">
-            <div className="flexbox-turn-on placeholder-content">
-              <img src={mammoth} className="placeholder-img"></img>
-              <h2>In Development!</h2>
-              <h2>Stay tuned!</h2>
-            </div>
-          </div>
-        </div>
+import { FC, useEffect } from "react";
+import { Login } from "@domains/login-signup/components/login";
+import { Signup } from "@domains/login-signup/components/signup";
+
+import "./login-signup-view.style.css";
+
+export const LoginSignupView: FC = () => {
+  return (
+    <section className='login-signup-view'>
+      <div>
+        <Login />
       </div>
-    </div>
-  </>
-);
+      <div>
+        <Signup />
+      </div>
+    </section>
+  );
+};
