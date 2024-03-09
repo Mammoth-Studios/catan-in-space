@@ -1,6 +1,7 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { featureComponentOneSlice } from "../domains/example-feature/components/feature-component-one/feature-component-one.slice";
 import { userQuerySlice } from "../domains/example-feature/components/feature-component-one/feature-component-one.queries";
+import { friendsDomainSlice } from "@domains/friends/friends.slice";
 // ...
 const rootReducer = combineReducers({
   // ...local reducers and useQuery reducershere,
@@ -8,10 +9,12 @@ const rootReducer = combineReducers({
   // comments: commentsReducer,
   [featureComponentOneSlice.reducerPath]: featureComponentOneSlice.reducer,
   [userQuerySlice.reducerPath]: userQuerySlice.reducer,
+  [friendsDomainSlice.reducerPath]: friendsDomainSlice.reducer,
 });
 
 export const store = configureStore({
   reducer: rootReducer,
+  //@ts-ignore
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(userQuerySlice.middleware),
 });

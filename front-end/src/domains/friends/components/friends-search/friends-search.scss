@@ -1,1 +1,52 @@
 @import "../../friends.scss";
+
+.friends-search {
+  align-items: center;
+  color: $grayscale-black;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  width: 80%;
+}
+
+.friends-search-bar {
+  align-items: center;
+  border: 2px solid $grayscale-black;
+  border-radius: 5px;
+  display: flex;
+  font-size: 20px;
+  justify-content: space-between;
+  padding: 10px;
+  margin-top: 50px;
+  width: 50%;
+}
+
+.friends-search-button {
+  background-color: $grayscale-black;
+  border: none;
+  border-radius: 5px;
+  color: $grayscale-off-white;
+  cursor: pointer;
+  font-size: 20px;
+  height: 60px;
+  margin-left: 10px;
+  padding: 10px;
+  width: 10%;
+}
+
+.friends-search-input {
+  background-color: $grayscale-off-white;
+  border: none;
+  color: $grayscale-black;
+  height: 100%;
+  font-size: 15px;
+
+  :focus {
+    border: none;
+    outline: none;
+  }
+}
+
+.friends-search-list {
+  width: 100%;
+}
