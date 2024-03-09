@@ -1,27 +1,29 @@
 import { FC } from "react";
 import "./friends-list.scss";
 import { friendsList } from "./friends-list.constant";
+import { FriendListItem } from "./friend-list-item.component";
+import { FriendListHeader } from "./friend-list-header.component";
+import { FriendsNavButtons } from "../friends-nav-buttons";
 
 export const FriendsList: FC = () => {
   return (
     <div className="friends-list">
-      <div className="friends-list-header">
+      <FriendListHeader>
         <h3>Username</h3>
         <h3>Status</h3>
         <h3>Last Online</h3>
         <h3>Games Played</h3>
-        <button>Requests</button>
-        <button>+</button>
-      </div>
+        <FriendsNavButtons />
+      </FriendListHeader>
       <div className="friends-list-container">
         {friendsList.map(({ username, status, lastOn, gamesPlayed }, i) => (
-          <div key={username + i} className="friends-list-item">
-            <p>{username}</p>
-            <p>{status ? "Online" : "Offline"}</p>
-            <p>{new Date(lastOn).toLocaleDateString()}</p>
-            <p>{gamesPlayed}</p>
-            <button>X</button>
-          </div>
+          <FriendListItem
+            key={username + i}
+            username={username}
+            status={status}
+            lastOn={lastOn}
+            gamesPlayed={gamesPlayed}
+          />
         ))}
       </div>
     </div>

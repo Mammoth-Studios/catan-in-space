@@ -1,0 +1,19 @@
+@import "../../friends.scss";
+
+.friends-requests-list-item {
+  align-items: center;
+  border: 2px solid $grayscale-black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  //   padding: 10px;
+  width: 100%;
+}
+
+.friends-requests-list-name {
+  margin-left: 20px;
+}
+
+.friends-requests-btns {
+  margin: 20px;
+}
