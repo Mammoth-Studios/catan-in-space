@@ -3,11 +3,12 @@
 .hero-section {
   display: flex;
   justify-content: space-around;
-  height: 20vh;
+  height: 200px;
   width: 70%;
   border: 2px solid $grayscale-black;
 }
 .hero-section-image-div {
+  display: flex;
 }
 .hero-section-image {
   margin-top: auto;
@@ -17,6 +18,8 @@
 }
 .hero-section-image-focus {
   position: absolute;
+  margin-top: 100px;
+  margin-left: 35px;
   color: $grayscale-dark-gray;
 }
 .hero-section-div {
