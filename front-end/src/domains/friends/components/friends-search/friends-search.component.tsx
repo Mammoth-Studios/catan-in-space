@@ -3,14 +3,13 @@ import "./friends-search.scss";
 import { FriendListHeader } from "../friends-list";
 import { FriendsNavButtons } from "../friends-nav-buttons";
 import { useSelector } from "react-redux";
-import { friendsDomainSlice } from "@domains/friends/friends.slice";
+import {
+  getSearchInput,
+  updateSearchInput,
+} from "@domains/friends/friends.slice";
 import { useDispatch } from "react-redux";
 import { FriendListItem } from "../friends-list/friend-list-item.component";
 import { friendsList } from "../friends-list/friends-list.constant";
-const {
-  actions: { updateSearchInput },
-  selectors: { getSearchInput },
-} = friendsDomainSlice;
 
 export const FriendsSearch: FC = () => {
   const dispatch = useDispatch();

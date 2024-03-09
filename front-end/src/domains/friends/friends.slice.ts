@@ -32,3 +32,8 @@ export const friendsDomainSlice = createSlice({
     },
   },
 });
+
+export const {
+  actions: { updateSearchInput },
+  selectors: { getSearchInput },
+} = friendsDomainSlice;
