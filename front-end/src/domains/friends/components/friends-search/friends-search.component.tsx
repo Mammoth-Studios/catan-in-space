@@ -2,19 +2,18 @@ import { FC } from "react";
 import "./friends-search.scss";
 import { FriendListHeader } from "../friends-list";
 import { FriendsNavButtons } from "../friends-nav-buttons";
-import { useSelector } from "react-redux";
 import {
   getSearchInput,
   updateSearchInput,
 } from "@domains/friends/friends.slice";
-import { useDispatch } from "react-redux";
 import { FriendListItem } from "../friends-list/friend-list-item.component";
 import { friendsList } from "../friends-list/friends-list.constant";
+import { useAppDispatch, useAppSelector } from "@redux/store";
 
 export const FriendsSearch: FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
-  const searchInput: string = useSelector(getSearchInput);
+  const searchInput: string = useAppSelector(getSearchInput);
 
   const handleSearch = (value: string) => {
     dispatch(updateSearchInput(value));

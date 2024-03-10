@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Friend } from "./components/friends-list/friends-list.constant";
 
 // Define a type for the slice state
@@ -6,6 +6,14 @@ import { Friend } from "./components/friends-list/friends-list.constant";
 export interface FriendsDomainSlice {
   searchInput: string;
   addFriendsArray: Friend[];
+}
+
+export interface FriendsDomainReducer {
+  state: FriendsDomainSlice;
+  action: { payload: string };
+}
+export interface FriendsDomainSelector {
+  state: FriendsDomainSlice;
 }
 
 const initialState: FriendsDomainSlice = {
@@ -17,23 +25,26 @@ export const friendsDomainSlice = createSlice({
   name: "friendsDomain",
   initialState,
   reducers: {
-    //@ts-ignore
-    updateSearchInput: (state, action) => {
-      state.searchInput = action.payload;
-
-      console.log(state.searchInput);
+    updateSearchInput: (
+      state: FriendsDomainSlice,
+      { payload }: PayloadAction<string>
+    ) => {
+      state.searchInput = payload;
     },
   },
   selectors: {
-    //@ts-ignore
-    getSearchInput: (state) => {
-      console.log(state.searchInput);
-      return state.searchInput;
+    getSearchInput: ({ searchInput }: FriendsDomainSlice): string => {
+      return searchInput;
     },
   },
 });
 
+interface FriendsDomainActions {
+  actions: typeof friendsDomainSlice.actions;
+  selectors: typeof friendsDomainSlice.selectors;
+}
+
 export const {
   actions: { updateSearchInput },
   selectors: { getSearchInput },
-} = friendsDomainSlice;
+}: FriendsDomainActions = friendsDomainSlice;
