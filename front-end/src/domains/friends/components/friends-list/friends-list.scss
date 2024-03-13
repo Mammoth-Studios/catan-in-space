@@ -1,0 +1,27 @@
+@import "../../friends.scss";
+
+.friends-list {
+  color: $grayscale-black;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  width: 80%;
+}
+
+.friends-list-container {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.friends-list-item {
+  align-items: center;
+  border: 2px solid $grayscale-black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-left: -10px;
+  padding: 10px;
+  width: 100%;
+}

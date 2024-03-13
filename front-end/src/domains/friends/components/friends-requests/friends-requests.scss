@@ -1,0 +1,19 @@
+@import "../../friends.scss";
+
+.friend-requests {
+  color: $grayscale-black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 40px;
+  width: 80%;
+}
+
+.friend-requests-container {
+  align-self: center;
+  border: 2px solid $grayscale-black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
