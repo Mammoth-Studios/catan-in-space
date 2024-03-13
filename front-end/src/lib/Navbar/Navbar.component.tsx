@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.style.scss";
+import logo from "../../logo.png";
 
 export const Navbar = () => {
   const [menuVisible, setMenuVisible] = useState(false);
@@ -26,11 +27,7 @@ export const Navbar = () => {
     for (let j = 0; j < hexCount; j++) {
       hexagons.push(
         <div className="hexagon" key={`hex-${j}`}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 100 100"
-            fill="#242424"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="#242424">
             {/* Your hexagon SVG path here */}
             <polygon points="50,5 95,25 95,75 50,95 5,75 5,25" />
           </svg>
@@ -68,32 +65,21 @@ export const Navbar = () => {
       </div>
       {window.innerWidth > 768 && (
         <ul id="nav-ul" className={menuVisible ? "active" : ""}>
-          <li
-            className={`nav-button ${isActiveLink("/") ? "active-link" : ""}`}
-          >
+          <img className="logo" src={logo} alt="logo" />
+          <li className={`nav-button ${isActiveLink("/") ? "active-link" : ""}`}>
             <Link to="/">Home</Link>
           </li>
-          <li
-            className={`nav-button ${
-              isActiveLink("/game") ? "active-link" : ""
-            }`}
-          >
+          <li className={`nav-button ${isActiveLink("/game") ? "active-link" : ""}`}>
             <Link to="/game">Game</Link>
           </li>
           {/* TODO: @Mary - navbar-routing */}
           {/* ------------------------------------------- */}
           <li
-            className={`nav-button ${
-              isActiveLink("/login-signup") ? "active-link" : ""
-            }`}
+            className={`nav-button ${isActiveLink("/login-signup") ? "active-link" : ""}`}
           >
             <Link to="/login-signup">Login/Signup</Link>
           </li>
-          <li
-            className={`nav-button ${
-              isActiveLink("/profile") ? "active-link" : ""
-            }`}
-          >
+          <li className={`nav-button ${isActiveLink("/profile") ? "active-link" : ""}`}>
             <Link to="/profile">Profile</Link>
           </li>
           {/* ------------------------------------------- */}
@@ -117,39 +103,25 @@ export const Navbar = () => {
             onClick={toggleMenu}
           >
             <ul id="nav-ul media-query" className={menuVisible ? "active" : ""}>
-              <li
-                className={`nav-button ${
-                  isActiveLink("/") ? "active-link" : ""
-                }`}
-              >
+              <li className={`nav-button ${isActiveLink("/") ? "active-link" : ""}`}>
                 <Link to="/">Home</Link>
               </li>
               <li
-                className={`nav-button ${
-                  isActiveLink("/feature") ? "active-link" : ""
-                }`}
+                className={`nav-button ${isActiveLink("/feature") ? "active-link" : ""}`}
               >
                 <Link to="/feature">Feature</Link>
               </li>
               <li
-                className={`nav-button ${
-                  isActiveLink("/feature2") ? "active-link" : ""
-                }`}
+                className={`nav-button ${isActiveLink("/feature2") ? "active-link" : ""}`}
               >
                 <Link to="/feature2">Feature 2</Link>
               </li>
               <li
-                className={`nav-button ${
-                  isActiveLink("/example") ? "active-link" : ""
-                }`}
+                className={`nav-button ${isActiveLink("/example") ? "active-link" : ""}`}
               >
                 <Link to="/example">Example</Link>
               </li>
-              <li
-                className={`nav-button ${
-                  isActiveLink("/game") ? "active-link" : ""
-                }`}
-              >
+              <li className={`nav-button ${isActiveLink("/game") ? "active-link" : ""}`}>
                 <Link to="/game">Game</Link>
               </li>
               {/* TODO- \/ conditional rendering after auth added \/ */}
@@ -162,9 +134,7 @@ export const Navbar = () => {
                 <Link to="/login-signup">Login/Signup</Link>
               </li>
               <li
-                className={`nav-button ${
-                  isActiveLink("/profile") ? "active-link" : ""
-                }`}
+                className={`nav-button ${isActiveLink("/profile") ? "active-link" : ""}`}
               >
                 <Link to="/profile">Profile</Link>
               </li>
