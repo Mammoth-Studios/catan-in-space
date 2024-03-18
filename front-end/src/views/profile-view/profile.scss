@@ -1,0 +1,82 @@
+@import "../../theme.scss";
+
+.userProfile {
+  margin: 20px;
+  //   border: 2px solid $grayscale-black;
+  width: 81%;
+}
+.profileID {
+  //   display: flex;
+  margin: 5px;
+  align-items: center;
+  vertical-align: middle;
+  border: 2px solid $grayscale-black;
+}
+.profileHeader {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: $grayscale-black;
+  background-color: $grayscale-med-gray;
+}
+.userImg {
+  height: 200px;
+  display: block;
+  margin: auto;
+  border: 2px solid $grayscale-black;
+  font-size: initial; /* we reset the font-size if we want to add some content */
+  clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+  object-position: bottom;
+}
+.userName {
+  font-size: 30px;
+  font-style: italic;
+  text-align: center;
+  color: $grayscale-black;
+}
+
+.profileUniques {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.stats {
+  //   text-align: center;
+  margin: 5px;
+  width: 50%;
+  border: 2px solid $grayscale-black;
+  color: $grayscale-black;
+  font-size: 20px;
+}
+.statistics {
+  font-size: 30px;
+}
+.customize {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 5px;
+  border: 2px solid $grayscale-black;
+}
+.avatarEdit {
+  display: flex;
+  flex-direction: column;
+  //   justify-content: center;
+}
+.avatar {
+  height: 300px;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.editAvatarButton {
+  display: block;
+  justify-content: center;
+  margin: 20px;
+}
+.editGameSettings {
+  display: block;
+  justify-content: center;
+  margin: 20px;
+}
