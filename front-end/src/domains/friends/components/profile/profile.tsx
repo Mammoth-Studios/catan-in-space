@@ -1,6 +1,6 @@
 import { FC } from "react";
 import "./profile.scss";
-import profilePlaceholder from "@views/assets/profile-placeholder.png";
+import profilePlaceholder from "./assets/profile-placeholder.png";
 
 export const Profile: FC = () => (
   <div className="userProfile">
@@ -11,6 +11,7 @@ export const Profile: FC = () => (
     </div>
     <div className="profileUniques">
       <ul className="stats">
+        {/* TODO Dustin, this is the placeholder div I created for the stats. Feel free to insert yours into this. */}
         <p className="statistics">Statistics</p>
         <li>Level:</li>
         <li>XP:</li>
@@ -21,11 +22,14 @@ export const Profile: FC = () => (
         <li>Won (MP):</li>
         <li>Most Played Scenario:</li>
         <li>Most Played Expansion:</li>
+        {/* TODO Dustin, this is the placeholder div I created for the stats. Feel free to insert yours over this */}
       </ul>
       <div className="customize">
         <div className="avatarEdit">
+          {/* TODO Samson, when you work on the Avatar edit use this section. */}
           <img className="avatar" src={profilePlaceholder} />
           <button className="editAvatarButton">Edit Avatar</button>
+          {/* TODO Samson, when you work on the Avatar edit use this section */}
         </div>
         <button className="editGameSettings">Edit Game Settings</button>
       </div>
