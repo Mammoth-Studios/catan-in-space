@@ -1,0 +1,33 @@
+@import "../../friends.scss";
+
+.friends-edit-settings-button-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 2px solid black;
+  width: 85%;
+}
+
+.friends-edit-settings-button {
+  width: 100%;
+}
+
+.edit-settings-menu:open {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.edit-settings-menu-close-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 5px 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .edit-settings-menu:open {
+    width: 100%;
+    padding: 10px;
+  }
+}
