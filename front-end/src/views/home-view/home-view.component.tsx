@@ -5,6 +5,7 @@ import { FC } from "react";
 import "./home-view.style.scss";
 import HomeCards from "@domains/home/components/home-cards/home-cards.component";
 import HomeAbout from "@domains/home/components/home-about/home-about.component";
+import { HeroSection } from "@domains/home/components/home-hero-section/hero-section";
 
 export const HomeView: FC = () => (
   <div className="home-view">
@@ -14,6 +15,7 @@ export const HomeView: FC = () => (
         <h2>Test error page</h2>
       </Link>
     </div> */}
+    <HeroSection />
     <HomeCards />
     <HomeAbout />
   </div>

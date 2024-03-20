@@ -1,0 +1,42 @@
+@import "../../home.scss";
+
+.hero-section {
+  display: flex;
+  // justify-content: space-evenly;
+  height: 200px;
+  width: 70%;
+  border: 2px solid $grayscale-black;
+}
+.hero-section-image-div {
+  border: 1px solid $grayscale-med-gray;
+  display: flex;
+}
+.hero-section-image {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 40px;
+  height: 80%;
+  border-radius: 50%;
+}
+.hero-section-image-focus {
+  position: absolute;
+  margin-top: 100px;
+  margin-left: 35px;
+  color: $grayscale-dark-gray;
+}
+.hero-section-div {
+  align-items: center;
+  border: 1px solid $grayscale-black;
+
+  display: flex;
+  flex-direction: column;
+}
+.hero-section-signin {
+  color: $grayscale-dark-gray;
+  font-weight: 500;
+  text-decoration: inherit;
+  &:hover {
+    color: $grayscale-med-gray;
+    text-decoration: underline;
+  }
+}

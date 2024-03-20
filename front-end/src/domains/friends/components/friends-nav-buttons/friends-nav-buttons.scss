@@ -1,0 +1,11 @@
+@import "../../friends.scss";
+
+.friends-nav-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.friends-nav-buttons-right {
+  margin-left: 20px;
+}

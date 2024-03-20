@@ -1,0 +1,19 @@
+@import "../../friends.scss";
+.friends-list-header {
+  align-items: center;
+  align-self: center;
+  background-color: $grayscale-med-gray;
+  border: 3px solid $grayscale-black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 10px;
+  width: 100%;
+
+  &-request {
+    justify-content: space-between;
+  }
+  &-search {
+    justify-content: space-between;
+  }
+}

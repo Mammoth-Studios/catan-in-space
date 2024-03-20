@@ -118,6 +118,13 @@ nav {
   justify-content: space-evenly;
   padding-left: 0%;
 }
+.logo {
+  height: 50px;
+  margin: 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
 #nav-ul a {
   color: white !important;
 }
