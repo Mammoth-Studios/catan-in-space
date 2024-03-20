@@ -10,8 +10,7 @@ export const store = configureStore({
     [userQuerySlice.reducerPath]: userQuerySlice.reducer,
     [friendsDomainSlice.reducerPath]: friendsDomainSlice.reducer,
   },
-  //@ts-expect-error Expected because the linter told me to.
-  middleware: (getDefaultMiddleware) =>
+  middleware: (getDefaultMiddleware: any) =>
     getDefaultMiddleware().concat(userQuerySlice.middleware),
 });
 

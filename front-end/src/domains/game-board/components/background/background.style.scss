@@ -3,4 +3,9 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+
+  img {
+    width: 99%; //These numbers fit on the screen better
+    height: 98%;
+  }
 }
