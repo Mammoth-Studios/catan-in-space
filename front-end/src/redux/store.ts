@@ -1,17 +1,8 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import { featureComponentOneSlice } from "../domains/example-feature/components/feature-component-one/feature-component-one.slice";
 import { userQuerySlice } from "../domains/example-feature/components/feature-component-one/feature-component-one.queries";
 import { friendsDomainSlice } from "@domains/friends/friends.slice";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-
-const rootReducer = combineReducers({
-  // ...local reducers and useQuery reducershere,
-  // posts: postsReducer,
-  // comments: commentsReducer,
-  [featureComponentOneSlice.reducerPath]: featureComponentOneSlice.reducer,
-  [userQuerySlice.reducerPath]: userQuerySlice.reducer,
-  [friendsDomainSlice.reducerPath]: friendsDomainSlice.reducer,
-});
 
 export const store = configureStore({
   reducer: {
@@ -19,7 +10,7 @@ export const store = configureStore({
     [userQuerySlice.reducerPath]: userQuerySlice.reducer,
     [friendsDomainSlice.reducerPath]: friendsDomainSlice.reducer,
   },
-  //@ts-ignore
+  //@ts-expect-error Expected because the linter told me to.
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(userQuerySlice.middleware),
 });
