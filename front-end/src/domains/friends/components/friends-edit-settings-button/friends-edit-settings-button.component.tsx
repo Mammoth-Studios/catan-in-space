@@ -18,7 +18,10 @@ export const FriendsEditSettingsButton: FC = () => {
         {`Edit Game Settings >`}
       </button>
 
-      <dialog className="edit-settings-menu" open={isOpen}>
+      <dialog
+        className={`edit-settings-menu${isOpen ? "-open" : ""}`}
+        open={isOpen}
+      >
         <form method="dialog">
           <button
             className="edit-settings-menu-close-button"

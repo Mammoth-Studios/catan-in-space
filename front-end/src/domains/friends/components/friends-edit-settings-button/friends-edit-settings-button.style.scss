@@ -12,10 +12,14 @@
   width: 100%;
 }
 
-.edit-settings-menu:open {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.edit-settings-menu {
+  &-open {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    width: 70%;
+  }
 }
 
 .edit-settings-menu-close-button {
@@ -26,8 +30,10 @@
 }
 
 @media screen and (max-width: 768px) {
-  .edit-settings-menu:open {
-    width: 100%;
-    padding: 10px;
+  .edit-settings-menu {
+    &-open {
+      width: 100%;
+      padding: 10px;
+    }
   }
 }
