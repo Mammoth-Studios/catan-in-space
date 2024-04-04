@@ -4,6 +4,6 @@ import TEMP_UI from "./Temp-UI.png";
 
 export const Background: FC = () => (
   <div className="background">
-    <img src={TEMP_UI} alt={"Temp UI For Game Page"}/>
+    <img className="tempui-img" src={TEMP_UI} alt={"Temp UI For Game Page"}/>
   </div>
 );
