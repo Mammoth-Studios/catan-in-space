@@ -1,40 +1,13 @@
 import React, {useState} from "react";
-
-// type Node = {
-//   type: NodeType;
-// }
-
-type NodeType = "water" | "space" | "concrete" | "fuel" | "food" | "player" | "metal" | "empty";
-// const landTypes: NodeType[] = ["water", "concrete", "fuel", "food", "metal"];
-
-function typeToColor(type: NodeType): string {
-  switch (type) {
-    case "water":
-      return "#4040ff"; // Blue
-    case "space":
-      return "#000000"; // Black
-    case "concrete":
-      return "#808080"; // Grey
-    case "fuel":
-      return "#8d8b43"; // Yellow
-    case "food":
-      return "#008000"; // Green
-    case "player":
-      return "#FFFFFF"; // White
-    case "metal":
-      return "#A52A2A"; // Brown
-    default:
-      return "#000000"; // Default Space (Black)
-  }
-}
+import {getTradeString, GridItem, gridItemToColor, NodeType, SpaceType} from "../game-board.constant";
 
 interface HexProps {
   size: number,
   xPos: number,
   yPos: number,
-  type: NodeType,
+  gridItem: GridItem,
 }
-export const GameHex: React.FC<HexProps> = ({size, xPos, yPos, type}) => {
+export const GameHex: React.FC<HexProps> = ({size, xPos, yPos, gridItem}) => {
   const [scale, setScale] = useState(1);
 
   const anchorX = 500;
@@ -65,17 +38,34 @@ export const GameHex: React.FC<HexProps> = ({size, xPos, yPos, type}) => {
   }
 
   function handleClick() {
-    console.log(`clicked ${type} at (${xPos},${yPos})`);
+    if(gridItem.landType){
+      console.log(`clicked ${gridItem.landType} at (${xPos},${yPos})`);
+    } else if(gridItem.spaceType){
+      console.log(`clicked ${gridItem.spaceType} at (${xPos},${yPos})`);
+    } else {
+      console.error("You shouldn't be able to click this")
+    }
   }
 
+  function getText (item : GridItem) {
+    if (item.type === NodeType.LAND) {
+      return item.landType;
+    } else if (item.type === NodeType.SPACE && item.spaceType) {
+      return item.spaceType == SpaceType.EMPTY? "" : getTradeString(item.spaceType);
+    } else {
+      return "";
+    }
+  }
+
+
   return (
-    type !== "empty" && (
+    gridItem.type !== NodeType.EMPTY && (
       <svg x={cordX} y={cordY} height="140" width="140" viewBox="0 0 270 220" xmlns="http://www.w3.org/2000/svg">
         <g onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleClick}>
           <polygon
             points={scaledPoints}
             style={{
-              fill: typeToColor(type),
+              fill: gridItemToColor(gridItem),
               stroke: "black",
               strokeWidth: 10,
               transform: `scale(${scale})`,
@@ -83,10 +73,10 @@ export const GameHex: React.FC<HexProps> = ({size, xPos, yPos, type}) => {
             }}
           />
           <text fill="white" fontSize="20" x="50%" y="50%" textAnchor="middle" dx="-1em" dy="1.5em">
-            {`(${xPos}, ${yPos})`}
+            {gridItem.spaceType == SpaceType.EMPTY? "" : `(${xPos}, ${yPos})`}
           </text>
           <text fill="white" fontSize="20" x="50%" y="50%" textAnchor="middle" dx="-1em" dy="0em">
-            {`${type}`}
+            {`${getText(gridItem)}`}
           </text>
         </g>
       </svg>
