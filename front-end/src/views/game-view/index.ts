@@ -1,1 +1,1 @@
-export * from "./Game-View.component.tsx";
+export * from "./game-view.component";

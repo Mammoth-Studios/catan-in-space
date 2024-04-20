@@ -68,7 +68,7 @@ export const GameUIMenu: FC = () => {
   const TradeItem = TrayItems.find((item) => item.label === "Trade");
   if (!TradeItem) return null;
   return (
-    <section className="game-view">
+    <>
       {isTradeItemActive && (
         <TradeModal actionsMap={ActionMap} itemData={TradeItem} />
       )}
@@ -77,6 +77,6 @@ export const GameUIMenu: FC = () => {
         actionsMap={ActionMap}
         activeItem={activeTrayItem}
       />
-    </section>
+    </>
   );
 };

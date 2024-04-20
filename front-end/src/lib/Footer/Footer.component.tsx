@@ -28,7 +28,7 @@ const footerLinks: Array<LinkData> = [
 export const Footer: React.FC = () => (
   <footer>
     <div className="container">
-      <PlaceHolderBox height="100%" width="30%" title="Logo" position="mid" />
+      <PlaceHolderBox height="100%" width="30%" title="Logo" />
       <div className="links">
         {footerLinks.map((link: LinkData) => (
           <a key={link.href} href={link.href} aria-label={link.label}>
