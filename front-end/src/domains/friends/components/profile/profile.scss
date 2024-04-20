@@ -1,12 +1,14 @@
 @import "../../../../theme.scss";
 
+.customize-btns {
+  margin-bottom: 30px;
+  width: 85%;
+}
 .userProfile {
   margin: 20px;
-  //   border: 2px solid $grayscale-black;
   width: 81%;
 }
 .profileID {
-  //   display: flex;
   margin: 5px;
   align-items: center;
   vertical-align: middle;
@@ -52,6 +54,7 @@
   font-size: 30px;
 }
 .customize {
+  align-items: center;
   display: flex;
   flex-direction: column;
   width: 50%;
@@ -61,7 +64,7 @@
 .avatarEdit {
   display: flex;
   flex-direction: column;
-  //   justify-content: center;
+  width: 100%;
 }
 .avatar {
   height: 300px;
@@ -73,10 +76,11 @@
 .editAvatarButton {
   display: block;
   justify-content: center;
-  margin: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  width: 100%;
 }
 .editGameSettings {
   display: block;
   justify-content: center;
-  margin: 20px;
 }
