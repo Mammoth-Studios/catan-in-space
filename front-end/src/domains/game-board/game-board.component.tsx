@@ -1,10 +1,8 @@
 import { FC } from "react";
-import { Background } from "@domains/game-board/components/background";
-import { GamePlaceHolder } from "./components/game-placeholder";
+import { Board } from "./components/game-grid";
 
 export const GameBoard: FC = () => (
   <>
-    <Background />
-    <GamePlaceHolder />
+    <Board />
   </>
 );
