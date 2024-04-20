@@ -1,6 +1,7 @@
 import { FC } from "react";
 import "./profile.scss";
 import profilePlaceholder from "./assets/profile-placeholder.png";
+import { FriendsEditSettingsButton } from "../friends-edit-settings-button";
 
 export const Profile: FC = () => (
   <div className="userProfile">
@@ -28,10 +29,12 @@ export const Profile: FC = () => (
         <div className="avatarEdit">
           {/* TODO Samson, when you work on the Avatar edit use this section. */}
           <img className="avatar" src={profilePlaceholder} />
-          <button className="editAvatarButton">Edit Avatar</button>
           {/* TODO Samson, when you work on the Avatar edit use this section */}
         </div>
-        <button className="editGameSettings">Edit Game Settings</button>
+        <div className="customize-btns">
+          <button className="editAvatarButton">Edit Avatar</button>
+          <FriendsEditSettingsButton />
+        </div>
       </div>
     </div>
   </div>
