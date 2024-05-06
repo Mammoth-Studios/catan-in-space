@@ -6,6 +6,8 @@ import { updateGridWithRandomLandTypes } from "./game-grid.utils";
 
 import { GameHex } from "./game-hex.component";
 
+import "./game-grid.scss";
+
 /**
  * The Board component renders the game board.
  * It takes a savedBoard prop, which is a JSON string representing the initial state of the board.
@@ -24,6 +26,8 @@ export const Board: React.FC<BoardProps> = ({ savedBoard }) => {
   const [grid, setGrid] = useState<Grid>(
     savedBoard ? JSON.parse(savedBoard) : placeholderBoard
   );
+
+  const width = useMemo(() => window.innerWidth, []);
 
   // TODO:
   //[!!!DEBUG!!!] Handle Regenerating the board when R is pressed ===========
@@ -70,12 +74,13 @@ export const Board: React.FC<BoardProps> = ({ savedBoard }) => {
   // Memoize the board creation
   const memoizedBoard = useMemo(() => createBoard(grid), [createBoard, grid]);
 
-  // Style for the board SVG
-  const boardStyle: React.CSSProperties = {
-    width: window.innerWidth,
-    height: 900,
-    inset: 0,
-  };
-
-  return <svg style={boardStyle}>{memoizedBoard}</svg>;
+  return (
+    <svg
+      className="game-grid-svg"
+      style={{ width }}
+      viewBox={`${(width as number) / 10} 0 ${width} ${900}`}
+    >
+      {memoizedBoard}
+    </svg>
+  );
 };

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { TrayData } from "../icon-tray";
+import { TrayData } from "../rival-player-hud";
 import "./trade-modal.style.scss";
 
 type TradeModalProps = {

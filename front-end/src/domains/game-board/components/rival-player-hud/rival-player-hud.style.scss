@@ -1,0 +1,74 @@
+@import "../../game-board.scss";
+
+.rival-player-avatar {
+  align-items: center;
+  background-color: $grayscale-med-gray;
+  border: 3px solid $grayscale-black;
+  border-radius: 100px;
+  color: $grayscale-black;
+  display: flex;
+  height: 70px;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  width: 70px;
+}
+
+.rival-player-btn {
+  background-color: $grayscale-light-gray;
+  border: 2px solid $grayscale-black;
+  color: $grayscale-black;
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  text-align: center;
+  width: 34%;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: $grayscale-med-gray;
+    color: $grayscale-white;
+  }
+}
+
+.rival-player-btn-ctn {
+  border: 1px solid $grayscale-black;
+  color: $grayscale-black;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.rival-player-ctn {
+  align-items: center;
+  background-color: $grayscale-white;
+  clip-path: polygon(0 0, 70% 0, 100% 30%, 100% 100%, 0 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 150px;
+}
+
+.rival-player-hud {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  left: 50px;
+  top: 150px;
+}
+
+.rival-player-username {
+  color: $grayscale-black;
+  font-weight: bold;
+  margin-left: 20px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.rival-player-username-ctn {
+  width: 100%;
+}
